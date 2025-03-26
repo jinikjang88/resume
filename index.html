@@ -1,59 +1,519 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>내 GitHub Pages 사이트</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장진익 이력서</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #37352f;
+            --gray-text: #6B6B6B;
+            --light-gray: #F7F6F3;
+            --border-color: #E6E6E6;
+            --hover-color: #F0F0F0;
+            --primary-color: #2382FC;
+        }
+        
+        * {
             margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
         }
-        .container {
-            max-width: 800px;
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-size: 16px;
+            line-height: 1.5;
+            max-width: 900px;
             margin: 0 auto;
-            background-color: white;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+        
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
         h1 {
-            color: #333;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
         }
-        .tech-stack {
+        
+        h2 {
+            font-size: 1.75rem;
+            margin-top: 32px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+            margin-top: 24px;
+        }
+        
+        p {
+            margin-bottom: 16px;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        
+        .profile-info {
+            flex: 1;
+        }
+        
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 4px;
+            margin-left: 24px;
+            object-fit: cover;
+        }
+        
+        .meta-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
+            margin-bottom: 16px;
         }
-        .tech-item {
-            background-color: #e7f3ff;
-            padding: 8px 12px;
-            border-radius: 4px;
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            margin-right: 24px;
+            margin-bottom: 8px;
+            color: var(--gray-text);
+        }
+        
+        .meta-item svg {
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+        
+        .tag {
+            background-color: var(--light-gray);
+            padding: 4px 12px;
+            border-radius: 16px;
+            margin-right: 8px;
+            margin-bottom: 8px;
             font-size: 14px;
+        }
+        
+        .company {
+            margin-top: 24px;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+        }
+        
+        .company-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .company-logo {
+            width: 40px;
+            height: 40px;
+            background-color: #2382FC;
+            border-radius: 4px;
+            margin-right: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .company-info {
+            flex: 1;
+        }
+        
+        .company-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .company-role {
+            color: var(--gray-text);
+        }
+        
+        .project {
+            margin-bottom: 24px;
+            padding: 16px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        
+        .project:hover {
+            background-color: var(--hover-color);
+        }
+        
+        .project-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .project-period {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            margin-bottom: 8px;
+        }
+        
+        .project-description {
+            margin-bottom: 8px;
+        }
+        
+        .project-tech {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+        
+        .intro-section {
+            margin-bottom: 32px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .gray-text {
+            color: var(--gray-text);
+        }
+        
+        .certificate-item, .education-item {
+            margin-bottom: 16px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Spring Boot 개발자 포트폴리오</h1>
-        <p>안녕하세요! 이 페이지는 GitHub Pages와 사용자 지정 도메인 연결 예제입니다.</p>
+    <div class="profile-header">
+        <div class="profile-info">
+            <h1>장진익</h1>
+            <p>백엔드/서버개발자로서 11년 4개월의 다양한 경력을 보유하고 있습니다. 메가존에서는 우아한형제들 채용 시스템 운영 및 개발, 고도화 프로젝트 개발, 예산 관리 어드민 구축 등 다양한 프로젝트에 참여했습니다. 어다인주식회사에서는 통합메시징 분배솔루션 'M1 프레임워크'를 중심으로 금융권 및 보험사 등 다양한 고객사에 서비스를 제공하는 업무를 담당했습니다.</p>
+            <p>경력과 함께 특히 팀원으로서의 역량을 살려 협업과 소통을 통해 프로젝트를 성공적으로 이끌어냈습니다. 책임감 있게 일을 처리하고 끊임없는 도전으로 성과를 창출해왔습니다.</p>
+        </div>
+        <img src="/api/placeholder/400/320" alt="프로필 이미지" class="profile-image" />
+    </div>
+    
+    <div class="meta-info">
+        <div class="meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="currentColor"/>
+            </svg>
+            <span>남, 1988 (36세)</span>
+        </div>
+        <div class="meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="currentColor"/>
+            </svg>
+            <span>jin************@gmail.com</span>
+        </div>
+        <div class="meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z" fill="currentColor"/>
+            </svg>
+            <span>010-****-8588</span>
+        </div>
+        <div class="meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="currentColor"/>
+            </svg>
+            <span>(12584) 경기 양평군 양서면 목왕로</span>
+        </div>
+    </div>
+    
+    <section class="section">
+        <h2>나의 스킬</h2>
+        <div class="skill-tags">
+            <div class="tag">Java</div>
+            <div class="tag">Spring Boot</div>
+            <div class="tag">Spring Framework</div>
+            <div class="tag">Spring Data JPA</div>
+            <div class="tag">Hibernate</div>
+            <div class="tag">MySQL</div>
+            <div class="tag">Oracle</div>
+            <div class="tag">Tibero</div>
+            <div class="tag">MSSQL</div>
+            <div class="tag">풀스택</div>
+            <div class="tag">DBMS</div>
+            <div class="tag">Node.js</div>
+            <div class="tag">웹개발</div>
+            <div class="tag">Git</div>
+            <div class="tag">Jenkins</div>
+            <div class="tag">PL/SQL</div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>경력</h2>
+        <p>총 11년 4개월</p>
         
-        <h2>기술 스택</h2>
-        <div class="tech-stack">
-            <div class="tech-item">Java</div>
-            <div class="tech-item">Spring Boot</div>
-            <div class="tech-item">JPA</div>
-            <div class="tech-item">Hibernate</div>
-            <div class="tech-item">REST API</div>
+        <!-- 메가존 -->
+        <div class="company">
+            <div class="company-header">
+                <div class="company-logo">M</div>
+                <div class="company-info">
+                    <div class="company-name">메가존(주)</div>
+                    <div class="company-role">웹서비스 개발 1팀 · 과장/팀원 · 백엔드/서버개발</div>
+                    <div class="gray-text">2020.02 ~ 현재 · 5년 1개월</div>
+                </div>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">[우아한형제들 채용사이트 운영 및 개발]</div>
+                <div class="project-period">기간: 2023.07 - 2025.03</div>
+                <div class="project-description">
+                    <p>내용: 우아한형제들 인재채용, 우아한청년들 인재채용, 우아한청년들 크루채용, 어드민, 심사관 사이트 운영 및 개발</p>
+                    <p>업무: 요구사항 개발 및 운영, 장애 대응, 인프라 업무 지원</p>
+                </div>
+                <div class="project-tech">기술: Java 11, MySQL, Spring, Spring Boot, JPA</div>
+                <div class="project-tech">커뮤니케이션: Jira, Wiki, Slack</div>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">[우아한형제들 23년 채용 고도화 프로젝트 개발]</div>
+                <div class="project-period">기간: 2023.01 - 2023.06</div>
+                <div class="project-description">
+                    <p>내용: 우아한형제들 채용 시스템 고도화 프로젝트</p>
+                    <p>개발 도메인: 면담지관리, 공고, 직무, 지원자별 대시보드, 공통 통합테스트 개발</p>
+                </div>
+                <div class="project-tech">기술: Java 11, MySQL, Spring, Spring Boot, JPA</div>
+                <div class="project-tech">커뮤니케이션: Jira, Wiki, Slack</div>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">[우아한형제들 예산 관리 어드민 구축]</div>
+                <div class="project-period">기간: 2022.05 - 2022.12</div>
+                <div class="project-description">
+                    <p>내용: 우아한형제들 예산 관리 어드민 사이트 구축</p>
+                    <p>개발 도메인: 예산 과제 관리, AWS 파일 업/다운로드 관리, 예산 결재 관리</p>
+                </div>
+                <div class="project-tech">기술: Java 11, MySQL, Spring, Spring Boot, JPA</div>
+                <div class="project-tech">커뮤니케이션: Jira, Wiki, Slack</div>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">[우아한형제들 서빙로봇 관리 어드민 구축]</div>
+                <div class="project-period">기간: 2020.08 - 2022.05</div>
+                <div class="project-description">
+                    <p>내용: 우아한형제들 서빙로봇 관리 어드민 구축</p>
+                    <p>서빙로봇 관리 restapi 개발</p>
+                    <ul>
+                        <li>매장 및 로봇 관리, 로봇 이력 관리</li>
+                        <li>매장 및 로봇 현황 대시보드</li>
+                    </ul>
+                    <p>AWS S3 연동 API 개발</p>
+                    <p>Google Spread Sheet 연동 API 개발</p>
+                    <p>서빙로봇 호출 시스템 및 공유 주방 호출 시스템 연동</p>
+                </div>
+                <div class="project-tech">기술: Java 11, MySQL, Spring, Spring Boot, Spring WebFlux, JPA, Node.js</div>
+                <div class="project-tech">커뮤니케이션: Line, Jira, Wiki, Slack</div>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">[우아한형제들 아카데미 어드민/사이트 구축]</div>
+                <div class="project-period">기간: 2020.02 - 2020.08</div>
+                <div class="project-description">
+                    <p>사이트: https://academy.baemin.com/</p>
+                    <p>내용: 우아한형제들 사장님 아카데미 어드민 사이트 구축</p>
+                    <p>개발 도메인: 공지사항, 언론보도, 장사비법</p>
+                </div>
+                <div class="project-tech">기술: Java 11, MySQL, Spring, Spring Boot, JPA, Vue</div>
+                <div class="project-tech">커뮤니케이션: Jira, Wiki, Slack</div>
+            </div>
         </div>
         
-        <h2>프로젝트</h2>
-        <p>여기에 프로젝트 정보가 표시됩니다.</p>
-    </div>
+        <!-- 어다인 -->
+        <div class="company">
+            <div class="company-header">
+                <div class="company-logo">어</div>
+                <div class="company-info">
+                    <div class="company-name">어다인(주)</div>
+                    <div class="company-role">솔루션 개발부 · 과장/팀장 · 솔루션</div>
+                    <div class="gray-text">2015.04 ~ 2019.09 · 4년 6개월</div>
+                </div>
+            </div>
+            
+            <div class="project">
+                <div class="project-description">
+                    <p>주력 솔루션인 통합메시징 분배솔루션 'M1 프레임워크' 금융권/보험사 등 고객사 구축 프로젝트 및 개발 유지보수 업무</p>
+                    <p>주요업무:</p>
+                    <ul>
+                        <li>M1 프레임워크 솔루션 컨설팅 및 메시징 시스템 분석</li>
+                        <li>M1 프레임워크 솔루션 설치 및 커스텀 개발/테스트 지원</li>
+                        <li>고객사 내부 시스템 연동 규격 File, DB, EAI, TCP/IP 등 연동 지원</li>
+                        <li>중계 발송사 업무 지원 (SMS, LMS, MMS, kakao, push)</li>
+                        <li>메시징 어드민 웹 구축</li>
+                        <li>장애 발생 시 대응 전파</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">KB국민카드 SMS메시징 시스템 구축 및 유지보수</div>
+                <div class="project-description">
+                    <ul>
+                        <li>KB국민카드 차세대 프로젝트 지원 (2018년~2019년)</li>
+                        <li>KB국민카드 통합메시징 시스템 전환 프로젝트 (2017년)</li>
+                        <li>KB국민카드 SMS메시징 시스템 DB 암호화 지원(2013년)</li>
+                        <li>KB국민카드 SMS메시징 시스템 통합 웹 구축 프로젝트(2013년)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">기타 금융권 및 보험사 프로젝트</div>
+                <div class="project-description">
+                    <ul>
+                        <li>KB국민은행, 삼성화재, KEB 하나은행, 씨티은행, 대구은행, 수협은행, 신한은행 등 다수의 금융권 SMS/UMS메시징 시스템 구축 및 유지보수</li>
+                        <li>현대해상, 신한생명, 유안타증권, 신한금융투자 등 다수의 보험사 및 증권사 SMS/PUSH메시징 시스템 구축 및 유지보수</li>
+                        <li>보험연수원, 산와머니, 전주비전대, 전북소방본부, 아산병원 등 다수의 비금융권 메시징 시스템 구축 및 유지보수</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 에이베리시스템 -->
+        <div class="company">
+            <div class="company-header">
+                <div class="company-logo">에</div>
+                <div class="company-info">
+                    <div class="company-name">(주)에이베리시스템</div>
+                    <div class="company-role">솔루션 지원부 · 주임/팀원 · 솔루션</div>
+                    <div class="gray-text">2014.12 ~ 2015.04 · 5개월</div>
+                </div>
+            </div>
+            
+            <div class="project">
+                <div class="project-description">
+                    <p>SKT UAPS 솔루션 개발 및 유지보수 지원</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 어다인 첫번째 재직 -->
+        <div class="company">
+            <div class="company-header">
+                <div class="company-logo">어</div>
+                <div class="company-info">
+                    <div class="company-name">어다인(주)</div>
+                    <div class="company-role">솔루션 개발부 · 대리/팀원 · 솔루션</div>
+                    <div class="gray-text">2013.06 ~ 2014.09 · 1년 4개월</div>
+                </div>
+            </div>
+            
+            <div class="project">
+                <div class="project-description">
+                    <p>주력 솔루션인 통합메시징 분배솔루션 'M1 프레임워크' 금융권/보험사 등 고객사 구축 프로젝트 및 개발 유지보수 업무</p>
+                </div>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">대구은행 SMS메시징 시스템 발송사 구축 프로젝트</div>
+                <div class="project-period">2014-06-01 ~ 2014-08-01</div>
+                <div class="project-description">
+                    <ul>
+                        <li>담당역할: 대구은행 M1 분배솔루션 LGU+ 발송사에이전트 연동 지원</li>
+                        <li>담당업무: 발송사별 분배기능 추가, 분배별 통계지원</li>
+                        <li>사용언어: JAVA 1.6, Oracle</li>
+                        <li>OS: Unix-AIX</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">KB국민카드 통합메시징 DB암호화</div>
+                <div class="project-period">2013-12-01 ~ 2013-12-01</div>
+                <div class="project-description">
+                    <p>KB국민카드 통합메시징 개인정보 DB암호화 프로젝트</p>
+                    <ul>
+                        <li>담당역할: KB국민카드 통합메시징 개인정보 DB암호화 API 연동 개발</li>
+                        <li>담당업무: 메시징에 대한 개인정보 (주민등록번호, 휴대폰번호, 고객명, 계좌번호 등) API 연동 개발</li>
+                        <li>사용언어: JAVA 1.6, Oracle</li>
+                        <li>OS: Unix-AIX</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">KB국민카드 통합어드민 웹 구축 프로젝트</div>
+                <div class="project-period">2013-01-01 ~ 2013-04-01</div>
+                <div class="project-description">
+                    <p>KB국민카드 통합메시징 어드민 웹화면 구축 프로젝트</p>
+                    <ul>
+                        <li>담당역할: KB국민카드 웹 프레임워크(MVC모델) 웹 프로그램 개발</li>
+                        <li>담당업무: 일정관리, 유저관리, 민원인관리, 메시징전송화면</li>
+                        <li>사용언어: JAVA 1.6, Oracle</li>
+                        <li>OS: Unix-AIX</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>학력</h2>
+        
+        <div class="education-item">
+            <h3>안동대학교(4년제)</h3>
+            <p>컴퓨터공학 · 졸업</p>
+            <p class="gray-text">2007.03 ~ 2013.02</p>
+            <p>지역: 경북 · 학점: 3.43/4.5 · 주/야간: 주간</p>
+        </div>
+        
+        <div class="education-item">
+            <h3>현풍고등학교</h3>
+            <p>이과계열 · 졸업</p>
+            <p class="gray-text">2004.03 ~ 2007.02</p>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>자격/어학/수상</h2>
+        
+        <div class="certificate-item">
+            <p><strong>2011.09</strong> - 수유 전통시장활성화 어플리케이션 공모전 <strong>최우수상</strong> (시장경영진흥원)</p>
+        </div>
+        <div class="certificate-item">
+            <p><strong>2014.08</strong> - 정보처리기사 최종합격 (한국산업인력공단)</p>
+        </div>
+        <div class="certificate-item">
+            <p><strong>2007.12</strong> - 1종보통운전면허 최종합격 (경찰청-운전면허시험관리단)</p>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>병역</h2>
+        <p>군필 - 육군/병장 만기전역 (2008.08 ~ 2010.06)</p>
+    </section>
+    
+    <section class="section">
+        <h2>자기소개</h2>
+        <div class="intro-section">
+            <h3>[태도에서 인품과 인성 보인다]</h3>
+            <p>"가족의 울타리나 사회에서는 너의 태도에 달렸으니, 사람과 사람을 대함에서는 진실한 태도를 중요시하라"</p>
+            <p>저는 사회 일이나 친구들, 그리고 선후배들을 대하면서 태도의 중요함을 알게 되었고, 태도를 통해 자신을 신뢰할 수 있는 사람이 되기 위해 책임감을 키워나갔으며 언제든 신뢰할 수 있고 책임감 있는 일원으로 거듭나도록 최선을 다하겠습니다.</p>
+        </div>
+    </section>
 </body>
 </html>
