@@ -3,550 +3,1164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>장진익 이력서</title>
+    <title>장진익 - Career Timeline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #ffffff;
-            --text-color: #37352f;
-            --gray-text: #6B6B6B;
-            --light-gray: #F7F6F3;
-            --border-color: #E6E6E6;
-            --hover-color: #F0F0F0;
-            --primary-color: #2382FC;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f8f9fa;
+            --accent-gold: #b8860b;
+            --accent-gold-light: #d4a574;
+            --accent-purple: #7c3aed;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a5a;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+            --shadow-color: rgba(0, 0, 0, 0.08);
         }
-        
+
+        [data-theme="dark"] {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --bg-card-hover: #222230;
+            --accent-gold: #d4a574;
+            --accent-gold-light: #e8c9a8;
+            --accent-purple: #a78bfa;
+            --text-primary: #f5f5f5;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --border-color: #2a2a3a;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
         }
-        
+
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-size: 16px;
-            line-height: 1.5;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            transition: background 0.3s ease, color 0.3s ease;
         }
-        
-        h1, h2, h3, h4 {
-            font-weight: 600;
-            margin-bottom: 8px;
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 8px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px var(--shadow-color);
         }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
+
+        .theme-toggle:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
         }
+
+        .theme-toggle svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .theme-toggle .sun { display: none; }
+        .theme-toggle .moon { display: block; }
         
-        h2 {
-            font-size: 1.75rem;
-            margin-top: 32px;
-            padding-bottom: 8px;
+        [data-theme="dark"] .theme-toggle .sun { display: block; }
+        [data-theme="dark"] .theme-toggle .moon { display: none; }
+
+        /* Header */
+        .header {
+            padding: 80px 40px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
             border-bottom: 1px solid var(--border-color);
         }
-        
-        h3 {
-            font-size: 1.25rem;
-            margin-top: 24px;
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(184, 134, 11, 0.08) 0%, transparent 60%);
+            pointer-events: none;
         }
-        
-        p {
-            margin-bottom: 16px;
+
+        [data-theme="dark"] .header::before {
+            background: radial-gradient(ellipse at 50% 0%, rgba(212, 165, 116, 0.12) 0%, transparent 60%);
         }
-        
-        ul, ol {
-            margin: 16px 0;
-            padding-left: 24px;
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        
-        li {
-            margin-bottom: 8px;
+
+        .name-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 50%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
-        .profile-header {
-            display: flex;
-            align-items: center;
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
             margin-bottom: 32px;
         }
-        
-        .profile-info {
+
+        .philosophy-quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--accent-gold);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .philosophy-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+            max-width: 680px;
+            margin: 0 auto 40px;
+        }
+
+        .philosophy-keywords {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .keyword-item {
+            text-align: center;
+        }
+
+        .keyword-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 4px;
+        }
+
+        .keyword-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .career-summary {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .summary-item {
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .summary-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--accent-gold);
+        }
+
+        .summary-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 4px;
+        }
+
+        /* Timeline Container */
+        .timeline-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px 100px;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 50px;
+        }
+
+        /* Timeline Wrapper */
+        .timeline-wrapper {
+            position: relative;
+        }
+
+        /* Central Line - 첫번째 dot부터 마지막 dot까지만 */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            background: var(--border-color);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        /* Timeline Items */
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            text-align: right;
+            padding-right: 50px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            text-align: left;
+            padding-left: 50px;
+        }
+
+        .timeline-content {
             flex: 1;
+            max-width: calc(50% - 30px);
         }
-        
-        .profile-image {
-            width: 120px;
-            height: 120px;
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--bg-primary);
+            border: 3px solid var(--accent-gold);
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: translateX(-50%) scale(1.4);
+            box-shadow: 0 0 20px rgba(184, 134, 11, 0.4);
+        }
+
+        [data-theme="dark"] .timeline-item:hover .timeline-dot {
+            box-shadow: 0 0 20px rgba(212, 165, 116, 0.5);
+        }
+
+        .timeline-dot.current {
+            width: 18px;
+            height: 18px;
+            background: var(--accent-purple);
+            border-color: var(--accent-purple);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px var(--shadow-color);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            background: var(--bg-card-hover);
+            border-color: var(--accent-gold);
+            box-shadow: 0 12px 30px var(--shadow-color);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+        }
+
+        .card.current:hover {
+            border-color: var(--accent-purple);
+        }
+
+        .card.current:hover::before {
+            background: linear-gradient(90deg, transparent, var(--accent-purple), transparent);
+        }
+
+        .year-badge {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            background: rgba(184, 134, 11, 0.1);
+            color: var(--accent-gold);
             border-radius: 4px;
-            margin-left: 24px;
-            object-fit: cover;
+            margin-bottom: 12px;
         }
-        
-        .meta-info {
+
+        [data-theme="dark"] .year-badge {
+            background: rgba(212, 165, 116, 0.15);
+        }
+
+        .year-badge.current {
+            background: rgba(124, 58, 237, 0.1);
+            color: var(--accent-purple);
+        }
+
+        [data-theme="dark"] .year-badge.current {
+            background: rgba(167, 139, 250, 0.15);
+        }
+
+        .age-tag {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-left: 8px;
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+
+        .card-org {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .card-tags {
             display: flex;
             flex-wrap: wrap;
-            margin-bottom: 16px;
+            gap: 6px;
+            margin-top: 12px;
         }
-        
-        .meta-item {
-            display: flex;
+
+        .tag {
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 3px;
+            color: var(--text-muted);
+        }
+
+        [data-theme="dark"] .tag {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Project List */
+        .project-list {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .project-item {
+            margin-bottom: 10px;
+            padding-left: 12px;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .project-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-name {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .project-period {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        /* Achievement Badge */
+        .achievement {
+            display: inline-flex;
             align-items: center;
-            margin-right: 24px;
+            gap: 6px;
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            margin-top: 12px;
+            padding: 6px 10px;
+            background: rgba(184, 134, 11, 0.08);
+            border-radius: 4px;
+        }
+
+        [data-theme="dark"] .achievement {
+            background: rgba(212, 165, 116, 0.1);
+        }
+
+        .achievement svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Responsibilities */
+        .responsibilities {
+            margin-top: 14px;
+        }
+
+        .resp-title {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             margin-bottom: 8px;
-            color: var(--gray-text);
         }
-        
-        .meta-item svg {
-            margin-right: 8px;
-            flex-shrink: 0;
+
+        .resp-list {
+            list-style: none;
         }
-        
+
+        .resp-list li {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 4px;
+        }
+
+        .resp-list li::before {
+            content: '·';
+            position: absolute;
+            left: 4px;
+            color: var(--accent-gold);
+        }
+
+        /* Footer Stats */
+        .footer-stats {
+            max-width: 900px;
+            margin: 60px auto 0;
+            padding: 40px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 24px;
+            text-align: center;
+        }
+
+        .stat-item h4 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 6px;
+        }
+
+        .stat-item p {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            max-width: 900px;
+            margin: 40px auto 0;
+            padding: 40px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+        }
+
+        .skills-title {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 30px;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .skill-category {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .skill-category-title {
+            min-width: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding-top: 6px;
+        }
+
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            margin-top: 16px;
-        }
-        
-        .tag {
-            background-color: var(--light-gray);
-            padding: 4px 12px;
-            border-radius: 16px;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-        
-        .company {
-            margin-top: 24px;
-            margin-bottom: 32px;
-            padding-bottom: 16px;
-        }
-        
-        .company-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 16px;
-        }
-        
-        .company-logo {
-            width: 40px;
-            height: 40px;
-            background-color: #2382FC;
-            border-radius: 4px;
-            margin-right: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-        
-        .company-info {
+            gap: 8px;
             flex: 1;
         }
-        
-        .company-name {
-            font-weight: 600;
-            font-size: 1.2rem;
+
+        .skill-tag {
+            font-size: 0.8rem;
+            padding: 6px 14px;
+            background: rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
         }
-        
-        .company-role {
-            color: var(--gray-text);
+
+        [data-theme="dark"] .skill-tag {
+            background: rgba(255, 255, 255, 0.03);
         }
-        
-        .project {
-            margin-bottom: 24px;
-            padding: 16px;
-            border-radius: 4px;
-            transition: background-color 0.2s;
+
+        .skill-tag:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
         }
-        
-        .project:hover {
-            background-color: var(--hover-color);
+
+        .skill-tag.primary {
+            background: rgba(184, 134, 11, 0.08);
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            font-weight: 500;
         }
-        
-        .project-title {
-            font-weight: 600;
-            margin-bottom: 8px;
+
+        [data-theme="dark"] .skill-tag.primary {
+            background: rgba(212, 165, 116, 0.12);
         }
-        
-        .project-period {
-            font-size: 0.9rem;
-            color: var(--gray-text);
-            margin-bottom: 8px;
+
+        /* Credit Section */
+        .credit-section {
+            max-width: 900px;
+            margin: 60px auto 40px;
+            text-align: center;
         }
-        
-        .project-description {
-            margin-bottom: 8px;
+
+        .credit-content {
+            padding: 30px;
+            border-top: 1px solid var(--border-color);
         }
-        
-        .project-tech {
-            font-size: 0.9rem;
-            color: var(--gray-text);
-        }
-        
-        .intro-section {
-            margin-bottom: 32px;
-        }
-        
-        .section {
-            margin-bottom: 40px;
-        }
-        
-        .gray-text {
-            color: var(--gray-text);
-        }
-        
-        .certificate-item, .education-item {
+
+        .credit-icon {
             margin-bottom: 16px;
         }
+
+        .credit-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--accent-gold);
+            opacity: 0.6;
+        }
+
+        .credit-text {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .credit-highlight {
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        .credit-sub {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 50px 20px 40px;
+            }
+
+            .name-title {
+                font-size: 2.5rem;
+            }
+
+            .philosophy-quote {
+                font-size: 1.1rem;
+            }
+
+            .philosophy-keywords {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .timeline-line {
+                left: 20px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .timeline-content,
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                max-width: 100%;
+                text-align: left;
+                padding-left: 50px;
+                padding-right: 0;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .career-summary {
+                gap: 20px;
+            }
+
+            .summary-number {
+                font-size: 1.6rem;
+            }
+
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 6px 12px;
+                font-size: 0.75rem;
+            }
+
+            .skill-category {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .skill-category-title {
+                min-width: auto;
+            }
+
+            .skills-section,
+            .footer-stats {
+                padding: 24px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .timeline-item {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
-    <div class="profile-header">
-        <div class="profile-info">
-            <h1>장진익</h1>
-            <p>백엔드/서버개발자로서 11년 4개월의 다양한 경력을 보유하고 있습니다. 메가존에서는 우아한형제들 채용 시스템 운영 및 개발, 고도화 프로젝트 개발, 예산 관리 어드민 구축 등 다양한 프로젝트에 참여했습니다. 어다인주식회사에서는 통합메시징 분배솔루션 'M1 프레임워크'를 중심으로 금융권 및 보험사 등 다양한 고객사에 서비스를 제공하는 업무를 담당했습니다.</p>
-        </div>
-        
-    </div>
-    
-    <div class="meta-info">
-        <div class="meta-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="currentColor"/>
-            </svg>
-            <span>남, 1988 (36세)</span>
-        </div>
-        <div class="meta-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="currentColor"/>
-            </svg>
-            <span>jin************@gmail.com</span>
-        </div>
-        <div class="meta-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z" fill="currentColor"/>
-            </svg>
-            <span>010-****-8588</span>
-        </div>
-        <div class="meta-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="currentColor"/>
-            </svg>
-            <span>(12584) 경기 양평군 양서면</span>
-        </div>
-    </div>
-    
-    <section class="section">
-        <h2>나의 스킬</h2>
-        <div class="skill-tags">
-            <div class="tag">Java</div>
-            <div class="tag">Spring Boot</div>
-            <div class="tag">Spring Framework</div>
-            <div class="tag">Spring Data JPA</div>
-            <div class="tag">Hibernate</div>
-            <div class="tag">DBMS</div>
-            <div class="tag">MySQL</div>
-            <div class="tag">Oracle</div>
-            <div class="tag">Tibero</div>
-            <div class="tag">MSSQL</div>
-            <div class="tag">Node.js</div>
-            <div class="tag">웹개발</div>
-            <div class="tag">Git</div>
-            <div class="tag">Jenkins</div>
-        </div>
-    </section>
-    
-    <section class="section">
-        <h2>경력</h2>
-        <p>총 11년 4개월</p>
-        
-        <!-- 메가존 -->
-        <div class="company">
-            <div class="company-header">
-                <div class="company-logo">M</div>
-                <div class="company-info">
-                    <div class="company-name">메가존(주)</div>
-                    <div class="company-role">웹서비스 개발 1팀 · 과장/팀원 · 백엔드/서버개발</div>
-                    <div class="gray-text">2020.02 ~ 현재 · 5년 1개월</div>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+        </svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <span class="theme-label">Theme</span>
+    </button>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="name-title">장진익</h1>
+            <p class="subtitle">Backend Developer · Career Timeline</p>
+            
+            <p class="philosophy-quote">
+                "메시지는 누구에게나 전달되어야 하고,<br>
+                그 신뢰를 설계하는 것은 개발자의 몫이다."
+            </p>
+            
+            <p class="philosophy-desc">
+                금융권 메시징 시스템과 웹 백엔드를 개발하며 체득한 철학입니다.
+                IT의 본질은 적시성, 무결성, 접근성이라고 생각합니다.
+                필요한 시점에 정확히 전달되어야 하고, 데이터는 손상 없이 도달해야 하며,
+                누구나 차별 없이 서비스를 이용할 수 있어야 합니다.
+            </p>
+
+            <div class="philosophy-keywords">
+                <div class="keyword-item">
+                    <div class="keyword-title">적시성</div>
+                    <div class="keyword-desc">Timeliness</div>
+                </div>
+                <div class="keyword-item">
+                    <div class="keyword-title">무결성</div>
+                    <div class="keyword-desc">Integrity</div>
+                </div>
+                <div class="keyword-item">
+                    <div class="keyword-title">접근성</div>
+                    <div class="keyword-desc">Accessibility</div>
                 </div>
             </div>
 
-            <div class="project">
-                <div class="project-title">주요업무</div>
-                <div class="project-period"></div>
-                <div class="project-description">
-                    <pre>
-아키텍처 설계 및 구현
-- Spring boot 기반 모놀리식 레거시 및 마이크로서비스 아키텍처 에 따른 RESTful API 개발
-- SOLID 원칙 준수, 도메인 주도 설계 원칙을 따른 비즈니스 로직 모듈화
+            <div class="career-summary">
+                <div class="summary-item">
+                    <div class="summary-number">20+</div>
+                    <div class="summary-label">금융 고객사</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">500+</div>
+                    <div class="summary-label">API 설계</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-number">365/24</div>
+                    <div class="summary-label">무장애 운영</div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-백엔드 시스템 개발
-- Java 11의 기능 Stream API, Optional 활용한 코드 최적화
-- JPA 엔티티 관계 설계 및 @OneToMany, @ManyToMany 양방향 관계 최적화 또는 연관관계 최소화 설계
-- 동적 검색 조건을 위한 Boolean 조합 및 재사용 가능한 Predicate 설계
-- @Transactional의 전파 속성(Propagation)과 격리 수준(Isolation) 세부 조정
-- 낙관적 락(Optimistic Lock)과 비관적 락(Pessimistic Lock) 전략적 사용
-- 복잡한 DTO 변환을 위한 Projection 기법 및 결과 변환 최적화
+    <!-- Timeline -->
+    <div class="timeline-container">
+        <h2 class="section-title">Career Journey</h2>
+        
+        <div class="timeline-wrapper">
+            <div class="timeline-line" id="timelineLine"></div>
 
-코드 품질 및 유지보수성 향상
-- 클린 코드 원칙 적용 및 구글 자바 코드 컨벤션 표준화
-- 정적 코드 분석 도구SonarQube 연동
-- wiki 개발자 문서화 및 지식 공유
-- PR(MR) 리뷰를 통한 피드백
-
-운영 업무
-- 데이터베이스 스키마 변경 계획 수립 및 영향도 분석
-- 데이터 변경 스크립트 작성 및 검증
-- 릴리즈 노트 작성 및 배포
-- 변경 영향도 분석 및 이해관계자 커뮤니케이션
-- 장애 시 장애 보고서 및 장애 대책 수립 
+            <!-- 메가존 (현재) -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="card current">
+                        <span class="year-badge current">2020.02 - 현재 <span class="age-tag">33~38세</span></span>
+                        <h3 class="card-title">㈜메가존</h3>
+                        <p class="card-org">웹서비스 ITO팀 · 과장/팀원</p>
+                        <p class="card-desc">우아한형제들 프로젝트 전담. 채용시스템 개발 리더로서 다중 서비스 통합 운영 및 개발</p>
                         
-                    </pre>
+                        <div class="responsibilities">
+                            <div class="resp-title">주요 역할</div>
+                            <ul class="resp-list">
+                                <li>Spring Boot 기반 RESTful API 설계 및 개발</li>
+                                <li>JPA 엔티티 관계 설계 및 QueryDSL 최적화</li>
+                                <li>클린 코드 원칙 적용 및 코드 컨벤션 표준화</li>
+                                <li>PR 리뷰 및 Wiki 문서화를 통한 지식 공유</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-list">
+                            <div class="project-item">
+                                <div class="project-name">우아한형제들 채용사이트 개발 리더</div>
+                                <div class="project-period">2023.07 - 현재</div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-name">우아한형제들 채용 고도화 프로젝트</div>
+                                <div class="project-period">2023.01 - 2023.06</div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-name">우아한형제들 예산관리 어드민 구축</div>
+                                <div class="project-period">2022.05 - 2022.12</div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-name">우아한형제들 서빙로봇 관리 어드민 구축</div>
+                                <div class="project-period">2020.08 - 2022.05</div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-name">우아한형제들 사장님 아카데미 구축</div>
+                                <div class="project-period">2020.02 - 2020.08</div>
+                            </div>
+                        </div>
+
+                        <div class="card-tags">
+                            <span class="tag">Java 11</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">JPA</span>
+                            <span class="tag">QueryDSL</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">WebFlux</span>
+                            <span class="tag">AWS S3</span>
+                        </div>
+                        
+                        <div class="achievement">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                            채용시스템 개발 리더
+                        </div>
+                    </div>
                 </div>
+                <div class="timeline-dot current"></div>
             </div>
 
-            
-            
-            <div class="project">
-                <div class="project-title">[우아한형제들 채용사이트 운영 및 개발]</div>
-                <div class="project-period">기간: 2023.07 - 현재</div>
-                <div class="project-description">
-                    <p>내용: 우아한형제들 인재채용, 우아한청년들 인재채용, 우아한청년들 크루채용, 어드민, 심사관 사이트 운영 및 개발</p>
-                    <p>업무: 요구사항 개발 및 운영, 장애 대응, 인프라 업무 지원</p>
+            <!-- 어다인 2차 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="card">
+                        <span class="year-badge">2015.04 - 2019.09 <span class="age-tag">28~32세</span></span>
+                        <h3 class="card-title">㈜어다인 (2차)</h3>
+                        <p class="card-org">솔루션개발부 · 과장/팀장</p>
+                        <p class="card-desc">20여 개 금융기관 메시징 시스템 구축 및 운영. 다수의 PL 역할 수행으로 프로젝트 리딩 경험</p>
+                        
+                        <div class="responsibilities">
+                            <div class="resp-title">주요 업무</div>
+                            <ul class="resp-list">
+                                <li>M1 프레임워크 솔루션 컨설팅 및 메시징 시스템 분석</li>
+                                <li>고객사 내부 시스템 연동 (File, DB, EAI, TCP/IP)</li>
+                                <li>중계 발송사 업무 지원 (SMS, LMS, MMS, Kakao, Push)</li>
+                                <li>메시징 어드민 웹 구축 및 장애 대응</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-list">
+                            <div class="project-item">
+                                <div class="project-name">KB국민카드 차세대 프로젝트 PL</div>
+                                <div class="project-period">2018.10 - 2019.09</div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-name">씨티은행 통합메시징 OS전환 PL</div>
+                                <div class="project-period">2018.01 - 2018.03</div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-name">현대해상 DB암호화 프로젝트 PL</div>
+                                <div class="project-period">2016.10 - 2017.10</div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-name">KEB하나은행 텍스트뱅킹 MO서비스 구축</div>
+                                <div class="project-period">2016.09 - 2016.12</div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-name">삼성화재 통합메시징 시스템 구축</div>
+                                <div class="project-period">2015.06 - 2015.09</div>
+                            </div>
+                        </div>
+
+                        <div class="card-tags">
+                            <span class="tag">PL</span>
+                            <span class="tag">KB국민카드</span>
+                            <span class="tag">삼성화재</span>
+                            <span class="tag">현대해상</span>
+                            <span class="tag">씨티은행</span>
+                            <span class="tag">하나은행</span>
+                        </div>
+                        
+                        <div class="achievement">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                            KB국민카드 우수 SI업체 인원 선정 · 포상
+                        </div>
+                    </div>
                 </div>
-                <div class="project-tech">기술: Java 11, MySQL, Spring, Spring Boot, JPA</div>
-                <div class="project-tech">커뮤니케이션: Jira, Wiki, Slack</div>
+                <div class="timeline-dot"></div>
             </div>
-            
-            <div class="project">
-                <div class="project-title">[우아한형제들 23년 채용 고도화 프로젝트 개발]</div>
-                <div class="project-period">기간: 2023.01 - 2023.06</div>
-                <div class="project-description">
-                    <p>내용: 우아한형제들 채용 시스템 고도화 프로젝트</p>
-                    <p>개발 도메인: 면담지관리, 공고, 직무, 지원자별 대시보드, 공통 통합테스트 개발</p>
+
+            <!-- 에이베리시스템 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="card">
+                        <span class="year-badge">2014.12 - 2015.04 <span class="age-tag">27~28세</span></span>
+                        <h3 class="card-title">㈜에이베리시스템</h3>
+                        <p class="card-org">솔루션지원부 · 주임/팀원</p>
+                        <p class="card-desc">SKT UAPS 솔루션 개발 및 유지보수 지원. 통신 분야 경험</p>
+                        <div class="card-tags">
+                            <span class="tag">SKT</span>
+                            <span class="tag">통신솔루션</span>
+                            <span class="tag">UAPS</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-tech">기술: Java 11, MySQL, Spring, Spring Boot, JPA</div>
-                <div class="project-tech">커뮤니케이션: Jira, Wiki, Slack</div>
+                <div class="timeline-dot"></div>
             </div>
-            
-            <div class="project">
-                <div class="project-title">[우아한형제들 예산 관리 어드민 구축]</div>
-                <div class="project-period">기간: 2022.05 - 2022.12</div>
-                <div class="project-description">
-                    <p>내용: 우아한형제들 예산 관리 어드민 사이트 구축</p>
-                    <p>개발 도메인: 예산 과제 관리, AWS 파일 업/다운로드 관리, 예산 결재 관리</p>
+
+            <!-- 어다인 1차 -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="card">
+                        <span class="year-badge">2012.12 - 2014.09 <span class="age-tag">25~27세</span></span>
+                        <h3 class="card-title">㈜어다인 (1차)</h3>
+                        <p class="card-org">솔루션개발부 · 대리/팀원</p>
+                        <p class="card-desc">금융권 통합메시징 솔루션 'M1 프레임워크' 개발 시작. 금융 SI의 기초를 다짐</p>
+                        
+                        <div class="project-list">
+                            <div class="project-item">
+                                <div class="project-name">KB국민카드 통합어드민 웹 구축</div>
+                                <div class="project-period">2013.01 - 2013.04</div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-name">KB국민카드 통합메시징 DB암호화</div>
+                                <div class="project-period">2013.12</div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-name">대구은행 SMS메시징 발송사 연동</div>
+                                <div class="project-period">2014.06 - 2014.08</div>
+                            </div>
+                        </div>
+
+                        <div class="card-tags">
+                            <span class="tag">Java 1.6</span>
+                            <span class="tag">Oracle</span>
+                            <span class="tag">MVC</span>
+                            <span class="tag">Unix-AIX</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-tech">기술: Java 11, MySQL, Spring, Spring Boot, JPA</div>
-                <div class="project-tech">커뮤니케이션: Jira, Wiki, Slack</div>
-            </div>
-            
-            <div class="project">
-                <div class="project-title">[우아한형제들 서빙로봇 관리 어드민 구축]</div>
-                <div class="project-period">기간: 2020.08 - 2022.05</div>
-                <div class="project-description">
-                    <p>내용: 우아한형제들 서빙로봇 관리 어드민 구축</p>
-                    <p>서빙로봇 관리 restapi 개발</p>
-                    <ul>
-                        <li>매장 및 로봇 관리, 로봇 이력 관리</li>
-                        <li>매장 및 로봇 현황 대시보드</li>
-                    </ul>
-                    <p>AWS S3 연동 API 개발</p>
-                    <p>Google Spread Sheet 연동 API 개발</p>
-                    <p>서빙로봇 호출 시스템 및 공유 주방 호출 시스템 연동</p>
-                </div>
-                <div class="project-tech">기술: Java 11, MySQL, Spring, Spring Boot, Spring WebFlux, JPA, Node.js</div>
-                <div class="project-tech">커뮤니케이션: Line, Jira, Wiki, Slack</div>
-            </div>
-            
-            <div class="project">
-                <div class="project-title">[우아한형제들 아카데미 어드민/사이트 구축]</div>
-                <div class="project-period">기간: 2020.02 - 2020.08</div>
-                <div class="project-description">
-                    <p>사이트: https://academy.baemin.com/</p>
-                    <p>내용: 우아한형제들 사장님 아카데미 어드민 사이트 구축</p>
-                    <p>개발 도메인: 공지사항, 언론보도, 장사비법</p>
-                </div>
-                <div class="project-tech">기술: Java 11, MySQL, Spring, Spring Boot, JPA, Vue</div>
-                <div class="project-tech">커뮤니케이션: Jira, Wiki, Slack</div>
-            </div>
-        </div>
-        
-        <!-- 어다인 -->
-        <div class="company">
-            <div class="company-header">
-                <div class="company-logo">어</div>
-                <div class="company-info">
-                    <div class="company-name">어다인(주)</div>
-                    <div class="company-role">솔루션 개발부 · 과장/팀장 · 솔루션</div>
-                    <div class="gray-text">2015.04 ~ 2019.09 · 4년 6개월</div>
-                </div>
-            </div>
-            
-            <div class="project">
-                <div class="project-description">
-                    <p>주력 솔루션인 통합메시징 분배솔루션 'M1 프레임워크' 금융권/보험사 등 고객사 구축 프로젝트 및 개발 유지보수 업무</p>
-                    <p>주요업무:</p>
-                    <ul>
-                        <li>M1 프레임워크 솔루션 컨설팅 및 메시징 시스템 분석</li>
-                        <li>M1 프레임워크 솔루션 설치 및 커스텀 개발/테스트 지원</li>
-                        <li>고객사 내부 시스템 연동 규격 File, DB, EAI, TCP/IP 등 연동 지원</li>
-                        <li>중계 발송사 업무 지원 (SMS, LMS, MMS, kakao, push)</li>
-                        <li>메시징 어드민 웹 구축</li>
-                        <li>장애 발생 시 대응 전파</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="project">
-                <div class="project-title">KB국민카드 SMS메시징 시스템 구축 및 유지보수</div>
-                <div class="project-description">
-                    <ul>
-                        <li>KB국민카드 차세대 프로젝트 지원 (2018년~2019년)</li>
-                        <li>KB국민카드 통합메시징 시스템 전환 프로젝트 (2017년)</li>
-                        <li>KB국민카드 SMS메시징 시스템 DB 암호화 지원(2013년)</li>
-                        <li>KB국민카드 SMS메시징 시스템 통합 웹 구축 프로젝트(2013년)</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="project">
-                <div class="project-title">기타 금융권 및 보험사 프로젝트</div>
-                <div class="project-description">
-                    <ul>
-                        <li>KB국민은행, 삼성화재, KEB 하나은행, 씨티은행, 대구은행, 수협은행, 신한은행 등 다수의 금융권 SMS/UMS메시징 시스템 구축 및 유지보수</li>
-                        <li>현대해상, 신한생명, 유안타증권, 신한금융투자 등 다수의 보험사 및 증권사 SMS/PUSH메시징 시스템 구축 및 유지보수</li>
-                        <li>보험연수원, 산와머니, 전주비전대, 전북소방본부, 아산병원 등 다수의 비금융권 메시징 시스템 구축 및 유지보수</li>
-                    </ul>
-                </div>
+                <div class="timeline-dot"></div>
             </div>
         </div>
-        
-        <!-- 에이베리시스템 -->
-        <div class="company">
-            <div class="company-header">
-                <div class="company-logo">에</div>
-                <div class="company-info">
-                    <div class="company-name">(주)에이베리시스템</div>
-                    <div class="company-role">솔루션 지원부 · 주임/팀원 · 솔루션</div>
-                    <div class="gray-text">2014.12 ~ 2015.04 · 5개월</div>
+
+        <!-- Footer Stats -->
+        <div class="footer-stats">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h4>4</h4>
+                    <p>Companies</p>
                 </div>
-            </div>
-            
-            <div class="project">
-                <div class="project-description">
-                    <p>SKT UAPS 솔루션 개발 및 유지보수 지원</p>
+                <div class="stat-item">
+                    <h4>7년</h4>
+                    <p>금융 메시징</p>
                 </div>
-            </div>
-        </div>
-        
-        <!-- 어다인 첫번째 재직 -->
-        <div class="company">
-            <div class="company-header">
-                <div class="company-logo">어</div>
-                <div class="company-info">
-                    <div class="company-name">어다인(주)</div>
-                    <div class="company-role">솔루션 개발부 · 대리/팀원 · 솔루션</div>
-                    <div class="gray-text">2013.06 ~ 2014.09 · 1년 4개월</div>
+                <div class="stat-item">
+                    <h4>5년</h4>
+                    <p>웹 백엔드</p>
                 </div>
-            </div>
-            
-            <div class="project">
-                <div class="project-description">
-                    <p>주력 솔루션인 통합메시징 분배솔루션 'M1 프레임워크' 금융권/보험사 등 고객사 구축 프로젝트 및 개발 유지보수 업무</p>
+                <div class="stat-item">
+                    <h4>일 수백만</h4>
+                    <p>메시지 처리</p>
                 </div>
-            </div>
-            
-            <div class="project">
-                <div class="project-title">대구은행 SMS메시징 시스템 발송사 구축 프로젝트</div>
-                <div class="project-period">2014-06-01 ~ 2014-08-01</div>
-                <div class="project-description">
-                    <ul>
-                        <li>담당역할: 대구은행 M1 분배솔루션 LGU+ 발송사에이전트 연동 지원</li>
-                        <li>담당업무: 발송사별 분배기능 추가, 분배별 통계지원</li>
-                        <li>사용언어: JAVA 1.6, Oracle</li>
-                        <li>OS: Unix-AIX</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="project">
-                <div class="project-title">KB국민카드 통합메시징 DB암호화</div>
-                <div class="project-period">2013-12-01 ~ 2013-12-01</div>
-                <div class="project-description">
-                    <p>KB국민카드 통합메시징 개인정보 DB암호화 프로젝트</p>
-                    <ul>
-                        <li>담당역할: KB국민카드 통합메시징 개인정보 DB암호화 API 연동 개발</li>
-                        <li>담당업무: 메시징에 대한 개인정보 (주민등록번호, 휴대폰번호, 고객명, 계좌번호 등) API 연동 개발</li>
-                        <li>사용언어: JAVA 1.6, Oracle</li>
-                        <li>OS: Unix-AIX</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="project">
-                <div class="project-title">KB국민카드 통합어드민 웹 구축 프로젝트</div>
-                <div class="project-period">2013-01-01 ~ 2013-04-01</div>
-                <div class="project-description">
-                    <p>KB국민카드 통합메시징 어드민 웹화면 구축 프로젝트</p>
-                    <ul>
-                        <li>담당역할: KB국민카드 웹 프레임워크(MVC모델) 웹 프로그램 개발</li>
-                        <li>담당업무: 일정관리, 유저관리, 민원인관리, 메시징전송화면</li>
-                        <li>사용언어: JAVA 1.6, Oracle</li>
-                        <li>OS: Unix-AIX</li>
-                    </ul>
+                <div class="stat-item">
+                    <h4>10+</h4>
+                    <p>프로젝트 PL</p>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <section class="section">
-        <h2>학력</h2>
-        
-        <div class="education-item">
-            <h3>안동대학교(4년제)</h3>
-            <p>컴퓨터공학 · 졸업</p>
-            <p class="gray-text">2007.03 ~ 2013.02</p>
-            <p>지역: 경북 · 학점: 3.43/4.5 · 주/야간: 주간</p>
+
+        <!-- Skills Section -->
+        <div class="skills-section">
+            <h3 class="skills-title">Technical Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-category-title">Backend</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag primary">Java</span>
+                        <span class="skill-tag primary">Spring Boot</span>
+                        <span class="skill-tag primary">Spring Framework</span>
+                        <span class="skill-tag">Spring Data JPA</span>
+                        <span class="skill-tag">Spring WebFlux</span>
+                        <span class="skill-tag">Hibernate</span>
+                        <span class="skill-tag">QueryDSL</span>
+                        <span class="skill-tag">REST API</span>
+                        <span class="skill-tag">Node.js</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Database</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Oracle</span>
+                        <span class="skill-tag">Tibero</span>
+                        <span class="skill-tag">MSSQL</span>
+                        <span class="skill-tag">DB 모델링</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Infrastructure</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Unix-AIX</span>
+                        <span class="skill-tag">Linux-Redhat</span>
+                        <span class="skill-tag">Windows Server</span>
+                        <span class="skill-tag">AWS S3</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">DevOps & Tools</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Jenkins</span>
+                        <span class="skill-tag">SonarQube</span>
+                        <span class="skill-tag">Jira</span>
+                        <span class="skill-tag">Slack</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Messaging</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SMS/LMS/MMS</span>
+                        <span class="skill-tag">Kakao 알림톡</span>
+                        <span class="skill-tag">Push</span>
+                        <span class="skill-tag">EAI 연동</span>
+                        <span class="skill-tag">FTP</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="education-item">
-            <h3>현풍고등학교</h3>
-            <p>이과계열 · 졸업</p>
-            <p class="gray-text">2004.03 ~ 2007.02</p>
+
+        <!-- Credit Section -->
+        <div class="credit-section">
+            <div class="credit-content">
+                <div class="credit-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                        <path d="M8 12h8M12 8v8"/>
+                    </svg>
+                </div>
+                <p class="credit-text">
+                    Crafted with <span class="credit-highlight">Claude AI</span> by Anthropic
+                </p>
+                <p class="credit-sub">
+                    이 경력 타임라인은 AI 어시스턴트 Claude와 함께 제작되었습니다
+                </p>
+            </div>
         </div>
-    </section>
-    
-    <section class="section">
-        <h2>자격/어학/수상</h2>
-        
-        <div class="certificate-item">
-            <p><strong>2011.09</strong> - 수유 전통시장활성화 어플리케이션 공모전 <strong>최우수상</strong> (시장경영진흥원)</p>
-        </div>
-        <div class="certificate-item">
-            <p><strong>2014.08</strong> - 정보처리기사 최종합격 (한국산업인력공단)</p>
-        </div>
-        <div class="certificate-item">
-            <p><strong>2007.12</strong> - 1종보통운전면허 최종합격 (경찰청-운전면허시험관리단)</p>
-        </div>
-    </section>
-    
-    <section class="section">
-        <h2>병역</h2>
-        <p>군필 - 육군/병장 만기전역 (2008.08 ~ 2010.06)</p>
-    </section>
-    
-    <section class="section">
-        <h2>자기소개</h2>
-        <div class="intro-section">
-            <h3>[태도에서 인품과 인성 보인다]</h3>
-            <p>"가족의 울타리나 사회에서는 너의 태도에 달렸으니, 사람과 사람을 대함에서는 진실한 태도를 중요시하라"</p>
-            <p>저는 사회 일이나 친구들, 그리고 선후배들을 대하면서 태도의 중요함을 알게 되었고, 태도를 통해 자신을 신뢰할 수 있는 사람이 되기 위해 책임감을 키워나갔으며 언제든 신뢰할 수 있고 책임감 있는 일원으로 거듭나도록 최선을 다하겠습니다.</p>
-        </div>
-    </section>
+    </div>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+        }
+
+        // Calculate timeline line position
+        function updateTimelineLine() {
+            const wrapper = document.querySelector('.timeline-wrapper');
+            const dots = document.querySelectorAll('.timeline-dot');
+            const line = document.getElementById('timelineLine');
+            
+            if (dots.length >= 2) {
+                const firstDot = dots[0];
+                const lastDot = dots[dots.length - 1];
+                
+                const wrapperRect = wrapper.getBoundingClientRect();
+                const firstDotRect = firstDot.getBoundingClientRect();
+                const lastDotRect = lastDot.getBoundingClientRect();
+                
+                const topOffset = firstDotRect.top - wrapperRect.top + (firstDotRect.height / 2);
+                const bottomOffset = lastDotRect.top - wrapperRect.top + (lastDotRect.height / 2);
+                
+                line.style.top = topOffset + 'px';
+                line.style.height = (bottomOffset - topOffset) + 'px';
+            }
+        }
+
+        // Update on load and resize
+        window.addEventListener('load', updateTimelineLine);
+        window.addEventListener('resize', updateTimelineLine);
+
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    // Recalculate line after animation
+                    setTimeout(updateTimelineLine, 700);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.style.animationPlayState = 'paused';
+            observer.observe(item);
+        });
+    </script>
 </body>
 </html>
