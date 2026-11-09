@@ -399,7 +399,6 @@
         <ul class="dots">
           <li><strong>월 2억 건급, 단일 큐 초당 2,000건</strong> 비동기 분배 파이프라인 365일 24시간 무장애 운영 (<a href="#case-2" class="accent">문제 해결 사례 2</a>)</li>
           <li>중계사 다중화, 장애 시 자동 차단과 우회 발송(Circuit Breaking, Failover), DR센터 전환 지원</li>
-          <li>부산은행 대량입출금 메시지: 동일 수신자 기준 순서 보장 큐잉(역전 방지), 고유 키 기반 중복 발송 차단</li>
         </ul>
       </div>
 
@@ -452,7 +451,6 @@
         <li><span class="no">4</span><span class="k">해결책</span><span>리스너, 접수 큐, 분배기, 발송과 DB 큐로 이어지는 비동기 파이프라인에서 속도를 높이기보다 다운스트림을 보호하는 쪽을 택했습니다.</span></li>
         <li><span class="no">5</span><span class="k">과정</span><span>수신 측 한계에 맞춘 <strong>유량 제어(Throttling)</strong>, 재기동 시 잔여 데이터 <strong>멱등 재처리</strong>, 중계사 다중화와 장애 시 자동 차단, <strong>우회 발송(Circuit Breaking, Failover)</strong>, DR센터 전환을 적용했습니다.</span></li>
         <li><span class="no">6</span><span class="k">평가</span><span>20여 개 금융사를 <strong>365일 24시간 무장애</strong>로 운영했습니다.</span></li>
-        <li><span class="no">7</span><span class="k">비고</span><span>같은 구조를 부산은행 대량입출금 메시지에 확장해 동일 수신자 순서 보장과 고유 키 중복 차단까지 적용했습니다.</span></li>
       </ol>
     </div>
   </section>
