@@ -6,7 +6,7 @@
 <title>장진익 | 백엔드 엔지니어 이력서 · Java · Spring · 금융 통합메시징</title>
 <meta name="description" content="약속한 데이터를 제때, 정확하게, 멈추지 않고 전달하는 백엔드 엔지니어 장진익. 경력 12년 9개월. 우아한형제들 채용 시스템 통계 대시보드 응답 10초→1초, 월 2억 건급 금융권 메시지 파이프라인 365일 무장애 운영.">
 <meta name="author" content="장진익 (Jinik Jang)">
-<meta name="keywords" content="장진익, 백엔드 엔지니어, 백엔드 개발자, Java, Spring Boot, JPA, jOOQ, WebFlux, 금융 통합메시징, 우아한형제들, 이력서, backend engineer resume">
+<meta name="keywords" content="장진익, 백엔드 엔지니어, 백엔드 개발자, Java, Spring Boot, JPA, jOOQ, 금융 통합메시징, 우아한형제들, 이력서, backend engineer resume">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://stellar.me.kr/">
 
@@ -148,6 +148,12 @@
     .kv dt { margin-top: 0; font-size: 14px; }
   }
 
+  /* ===== 경력 ===== */
+  .career li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px; }
+  .career li:last-child { border-bottom: 1px solid var(--line); }
+  .career .note { display: block; font-size: 13.5px; color: var(--muted); }
+  .career .date { font-size: 13.5px; color: var(--faint); white-space: nowrap; }
+
   /* ===== 프로젝트 ===== */
   .org { font-size: 17px; font-weight: 800; color: var(--ink); }
   .org-desc { font-size: 14.5px; color: var(--muted); margin-top: 2px; }
@@ -234,8 +240,9 @@
     <div>
       <!-- 막대 위치는 2012~2027 구간(15년)을 100%로 환산한 값 -->
       <div class="tl-bar" aria-hidden="true">
-        <div class="tl-seg" style="left:0%; width:17%;"><em>어다인 대리</em></div>
-        <div class="tl-seg on" style="left:20%; width:26%;"><em>어다인 과장, 팀장</em></div>
+        <div class="tl-seg" style="left:0%; width:18%;"><em>어다인 대리</em></div>
+        <div class="tl-seg" style="left:19.4%; width:1.6%;" title="에이베리시스템 주임"></div>
+        <div class="tl-seg on" style="left:21.7%; width:24.9%;"><em>어다인 과장, 팀장</em></div>
         <div class="tl-seg on" style="left:53.3%; width:40%;"><em>메가존 과장 (우아한형제들, 코웨이 파견)</em></div>
         <div class="tl-seg" style="left:93.3%; width:6.7%;"></div>
         <span class="tl-year" style="left:0%;">2012</span>
@@ -245,9 +252,9 @@
         <span class="tl-year" style="left:93.3%;">2026</span>
       </div>
       <div class="tl-cards">
-        <div class="tl-card"><b>2012 ~ 2015</b>금융사 10여 곳 현장 구축, KB국민카드 통합어드민, SKT UAPS<div class="stack">Java, Unix</div></div>
+        <div class="tl-card"><b>2012 ~ 2015</b>금융사 10여 곳 현장 구축, KB국민카드 통합어드민, 에이베리시스템 SKT UAPS<div class="stack">Java, Unix</div></div>
         <div class="tl-card"><b>2015 ~ 2019</b>20여 개 금융사 M1 운영, 씨티은행 OS 전환, KB국민카드 차세대<div class="stack">Java 8, IPC Queue, Oracle</div></div>
-        <div class="tl-card"><b>2020 ~ 2026</b>우아한형제들 채용, 예산, 서빙로봇 어드민, 코웨이 공유 기능<div class="stack">Spring Boot, JPA, WebFlux, jOOQ</div></div>
+        <div class="tl-card"><b>2020 ~ 2026</b>우아한형제들 채용, 예산, 서빙로봇 어드민, 코웨이 공유 기능<div class="stack">Spring Boot, JPA, jOOQ</div></div>
         <div class="tl-card"><b>2026 ~ 현재</b>개인 서비스 4종 기획, 개발, 오픈<div class="stack">Claude Code, Codex, Gemini</div></div>
       </div>
     </div>
@@ -264,12 +271,23 @@
     </ul>
   </section>
 
+  <!-- ============ 경력 ============ -->
+  <section class="section" aria-labelledby="h-career">
+    <div class="label"><h2 id="h-career">경력</h2><div class="en">Career</div></div>
+    <ul class="career">
+      <li><div><strong>메가존(주)</strong> 웹서비스 ITO팀 과장<span class="note">우아한형제들, 코웨이 파견</span></div><span class="date">2020.02 ~ 2026.02 · 6년 1개월</span></li>
+      <li><div><strong>어다인주식회사</strong> 솔루션사업부 과장, 팀장</div><span class="date">2015.04 ~ 2019.09 · 4년 6개월</span></li>
+      <li><div><strong>(주)에이베리시스템</strong> 솔루션지원부 주임</div><span class="date">2014.12 ~ 2015.04 · 5개월</span></li>
+      <li><div><strong>어다인주식회사</strong> 솔루션사업부 대리</div><span class="date">2012.12 ~ 2014.09 · 1년 10개월</span></li>
+    </ul>
+  </section>
+
   <!-- ============ 보유 기술 ============ -->
   <section class="section" aria-labelledby="h-skills">
     <div class="label"><h2 id="h-skills">보유 기술</h2><div class="en">Skills</div></div>
     <dl class="kv">
       <dt>언어</dt><dd>Java, Python, JavaScript</dd>
-      <dt>프레임워크</dt><dd>Spring Boot, Spring WebFlux, JPA, QueryDSL, jOOQ, MyBatis, FreeMarker, Vue.js</dd>
+      <dt>프레임워크</dt><dd>Spring Boot, JPA, QueryDSL, jOOQ, MyBatis, FreeMarker, Vue.js</dd>
       <dt>DB</dt><dd>MySQL, MariaDB, Oracle, MSSQL, Tibero</dd>
       <dt>메시징</dt><dd>OS IPC Queue, File Queue, 비동기 분배 파이프라인</dd>
       <dt>인프라, 운영</dt><dd>Linux, Unix-AIX, HP-UX, AWS S3, Jenkins</dd>
@@ -286,6 +304,15 @@
       <p class="org-desc">메가존 소속으로 우아한형제들, 코웨이에 파견되어 백오피스 백엔드를 개발하고 운영했습니다.</p>
 
       <div class="proj">
+        <div class="proj-head"><h3>코웨이 디지털세일즈 앱 콘텐츠 공유 기능</h3><span class="date">2025.12 ~ 2026.02</span></div>
+        <div class="meta"><b>백엔드 개발</b> | Java 11, Spring Boot, MySQL, jOOQ, MyBatis, JPA</div>
+        <ul class="dots">
+          <li>공유 기능 테이블 설계와 API 개발</li>
+          <li>MyBatis와 JPA가 섞인 코드베이스에서 신규 조회를 jOOQ로 작성해 컴파일 시점 타입 안정성 확보</li>
+        </ul>
+      </div>
+
+      <div class="proj">
         <div class="proj-head"><h3>우아한형제들 채용 시스템 운영, 개발</h3><span class="date">2023.07 ~ 2025.12</span></div>
         <div class="meta"><b>Technical Lead</b> 백엔드 주 개발자, 운영 | Java 11, Spring Boot, JPA, MySQL, GitLab</div>
         <ul class="dots">
@@ -295,15 +322,6 @@
           <li>Workday, HRWorx 신규 인사시스템 연동</li>
           <li>ISMS-P 인증심사 대응: 개인정보 흐름 분석, 첨부파일 접근 취약점 조치, 비밀번호 해시 알고리즘 강화</li>
           <li>자주 생기는 문의와 장애 대응 방법을 문서화</li>
-        </ul>
-      </div>
-
-      <div class="proj">
-        <div class="proj-head"><h3>코웨이 디지털세일즈 앱 콘텐츠 공유 기능</h3><span class="date">2025.12 ~ 2026.02</span></div>
-        <div class="meta"><b>백엔드 개발</b> | Java 11, Spring Boot, MySQL, jOOQ, MyBatis, JPA</div>
-        <ul class="dots">
-          <li>공유 기능 테이블 설계와 API 개발</li>
-          <li>MyBatis와 JPA가 섞인 코드베이스에서 신규 조회를 jOOQ로 작성해 컴파일 시점 타입 안정성 확보</li>
         </ul>
       </div>
 
@@ -326,9 +344,9 @@
 
       <div class="proj">
         <div class="proj-head"><h3>우아한형제들 서빙로봇 관리 어드민 구축</h3><span class="date">2020.08 ~ 2022.05</span></div>
-        <div class="meta"><b>백엔드 개발</b> | Spring Boot, Spring WebFlux, MySQL</div>
+        <div class="meta"><b>백엔드 개발</b> | Spring Boot, MySQL, Node.js</div>
         <ul class="dots">
-          <li>Spring WebFlux 기반으로 서빙로봇, 공유주방 호출 시스템을 논블로킹 연동</li>
+          <li>서빙로봇, 공유주방 호출 시스템 개발 (Node.js)</li>
           <li>로봇 이력, 매장 현황 대시보드 개발, AWS S3와 Google Sheets API 연동</li>
         </ul>
       </div>
@@ -351,16 +369,6 @@
       <p class="org-desc">금융권 통합메시징(SMS, PUSH, 알림톡, LINE) 솔루션 M1의 고객사 구축, 연동 개발, 운영을 맡았습니다.</p>
 
       <div class="proj">
-        <div class="proj-head"><h3>금융권 메시징 솔루션(M1) 운영</h3><span class="date">2015.04 ~ 2019.09</span></div>
-        <div class="meta"><b>People Management</b> 팀장 | KB국민은행, 신한은행, 씨티은행, 삼성화재 등 20여 개 금융사 | Java 8, IPC Queue, File Queue, Oracle</div>
-        <ul class="dots">
-          <li><strong>월 2억 건급, 단일 큐 초당 2,000건</strong> 비동기 분배 파이프라인 365일 24시간 무장애 운영 (<a href="#case-2" class="accent">문제 해결 사례 2</a>)</li>
-          <li>중계사 다중화, 장애 시 자동 차단과 우회 발송(Circuit Breaking, Failover), DR센터 전환 지원</li>
-          <li>부산은행 대량입출금 메시지: 동일 수신자 기준 순서 보장 큐잉(역전 방지), 고유 키 기반 중복 발송 차단</li>
-        </ul>
-      </div>
-
-      <div class="proj">
         <div class="proj-head"><h3>KB국민카드 차세대 통합 프로젝트</h3><span class="date">2018.10 ~ 2019.09</span></div>
         <div class="meta"><b>개발</b> | M1 프레임워크</div>
         <ul class="dots">
@@ -378,6 +386,14 @@
       </div>
 
       <div class="proj">
+        <div class="proj-head"><h3>KEB하나은행 텍스트뱅킹 MO 서비스 구축</h3><span class="date">2016.09 ~ 2016.12</span></div>
+        <div class="meta"><b>개발</b></div>
+        <ul class="dots">
+          <li>국내 최초 문자 뱅킹 서비스의 MO 수신 처리, 뱅킹 업무, 메시징 채널 연동 개발</li>
+        </ul>
+      </div>
+
+      <div class="proj">
         <div class="proj-head"><h3>현대해상 통합메시징 DB 암호화, 알림톡 연동</h3><span class="date">2016.04 ~ 2017.10</span></div>
         <div class="meta">Java 1.7, Spring Boot, Tibero, MyBatis</div>
         <ul class="dots">
@@ -386,10 +402,12 @@
       </div>
 
       <div class="proj">
-        <div class="proj-head"><h3>KEB하나은행 텍스트뱅킹 MO 서비스 구축</h3><span class="date">2016.09 ~ 2016.12</span></div>
-        <div class="meta"><b>개발</b></div>
+        <div class="proj-head"><h3>금융권 메시징 솔루션(M1) 운영</h3><span class="date">2015.04 ~ 2019.09</span></div>
+        <div class="meta"><b>People Management</b> 팀장 | KB국민은행, 신한은행, 씨티은행, 삼성화재 등 20여 개 금융사 | Java 8, IPC Queue, File Queue, Oracle</div>
         <ul class="dots">
-          <li>국내 최초 문자 뱅킹 서비스의 MO 수신 처리, 뱅킹 업무, 메시징 채널 연동 개발</li>
+          <li><strong>월 2억 건급, 단일 큐 초당 2,000건</strong> 비동기 분배 파이프라인 365일 24시간 무장애 운영 (<a href="#case-2" class="accent">문제 해결 사례 2</a>)</li>
+          <li>중계사 다중화, 장애 시 자동 차단과 우회 발송(Circuit Breaking, Failover), DR센터 전환 지원</li>
+          <li>부산은행 대량입출금 메시지: 동일 수신자 기준 순서 보장 큐잉(역전 방지), 고유 키 기반 중복 발송 차단</li>
         </ul>
       </div>
 
@@ -512,7 +530,7 @@
     "https://devsmith.kr",
     "https://wolkanglegend.com"
   ],
-  "knowsAbout": ["Java", "Spring Boot", "Spring WebFlux", "JPA", "QueryDSL", "jOOQ", "MySQL", "Oracle", "금융 통합메시징", "비동기 메시지 파이프라인"],
+  "knowsAbout": ["Java", "Spring Boot", "JPA", "QueryDSL", "jOOQ", "MySQL", "Oracle", "금융 통합메시징", "비동기 메시지 파이프라인"],
   "alumniOf": {
     "@type": "CollegeOrUniversity",
     "name": "안동대학교"
