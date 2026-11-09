@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>장진익 | 백엔드 개발자 이력서 · Java · Spring · 금융 통합메시징</title>
-<meta name="description" content="12년 경력 백엔드 개발자 장진익의 이력서. Java, Spring Boot, JPA 기반 웹 백엔드와 금융권 통합메시징(M1 프레임워크) 구축·운영. 우아한형제들, KB국민카드, 삼성화재 등 프로젝트 수행.">
-<meta name="author" content="장진익 (Jang Jin-ik)">
-<meta name="keywords" content="장진익, 백엔드 개발자, Java 개발자, Spring Boot, JPA, QueryDSL, 금융 메시징, 통합메시징, 이력서, 포트폴리오, backend developer resume">
+<title>장진익 | 백엔드 엔지니어 이력서 · Java · Spring · 금융 통합메시징</title>
+<meta name="description" content="약속한 데이터를 제때, 정확하게, 멈추지 않고 전달하는 백엔드 엔지니어 장진익. 경력 12년 9개월. 우아한형제들 채용 시스템 통계 대시보드 응답 10초→1초, 월 2억 건급 금융권 메시지 파이프라인 365일 무장애 운영.">
+<meta name="author" content="장진익 (Jinik Jang)">
+<meta name="keywords" content="장진익, 백엔드 엔지니어, 백엔드 개발자, Java, Spring Boot, JPA, jOOQ, WebFlux, 금융 통합메시징, 우아한형제들, 이력서, backend engineer resume">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://stellar.me.kr/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="profile">
-<meta property="og:title" content="장진익 | 백엔드 개발자 이력서">
-<meta property="og:description" content="12년 경력 백엔드 개발자. Java · Spring 기반 웹 백엔드와 금융권 통합메시징 구축·운영.">
+<meta property="og:title" content="장진익 | 백엔드 엔지니어 이력서">
+<meta property="og:description" content="적시성 · 무결성 · 연속성. 약속한 데이터를 제때, 정확하게, 멈추지 않고 전달하는 백엔드 엔지니어.">
 <meta property="og:url" content="https://stellar.me.kr/">
 <meta property="og:site_name" content="장진익 이력서">
 <meta property="og:locale" content="ko_KR">
@@ -22,13 +22,13 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="장진익 | 백엔드 개발자 이력서">
-<meta name="twitter:description" content="12년 경력 백엔드 개발자. Java · Spring · 금융 통합메시징.">
+<meta name="twitter:title" content="장진익 | 백엔드 엔지니어 이력서">
+<meta name="twitter:description" content="적시성 · 무결성 · 연속성. Java · Spring · 금융 통합메시징 백엔드 엔지니어.">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233a5a4a'/><text x='50' y='70' font-size='60' font-family='sans-serif' font-weight='bold' fill='%23ffffff' text-anchor='middle'>장</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232E5C8A'/><text x='50' y='70' font-size='60' font-family='sans-serif' font-weight='bold' fill='%23ffffff' text-anchor='middle'>장</text></svg>">
 
 <style>
-  /* ===== Pretendard (self-hosted) ===== */
+  /* Pretendard self-host: 외부 CDN 의존 없이 오프라인·인쇄에서도 동일하게 보이도록 */
   @font-face {
     font-family: 'Pretendard Variable';
     font-weight: 45 920;
@@ -36,721 +36,492 @@
     font-display: swap;
     src: url('assets/fonts/PretendardVariable.woff2') format('woff2-variations');
   }
-  /* ===== Newsreader italic (self-hosted, latin subsets) ===== */
-  @font-face {
-    font-family: 'Newsreader';
-    font-style: italic;
-    font-weight: 400 500;
-    font-display: swap;
-    src: url('assets/fonts/Newsreader-italic-latin-ext.woff2') format('woff2');
-    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+
+  :root {
+    --accent: #2E5C8A;          /* 오행 '수' — 화면당 강조색 1개 */
+    --accent-soft: #e9eff5;
+    --ink: #1f2328;
+    --text: #3d434a;
+    --muted: #6b737b;
+    --faint: #9aa1a8;
+    --line: #e4e6e9;
+    --bar: #c9ced4;
+    --bg: #ffffff;
+    --page: #f4f3ef;
   }
-  @font-face {
-    font-family: 'Newsreader';
-    font-style: italic;
-    font-weight: 400 500;
-    font-display: swap;
-    src: url('assets/fonts/Newsreader-italic-latin.woff2') format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif; background: #e7e5df; }
-  ul { list-style: none; }
-  a { color: inherit; }
-  #sheet a { text-decoration: none; }
-  #sheet a:hover { text-decoration: underline; }
-  @media print {
-    body { background: #ffffff !important; }
-    #sheetwrap { padding: 0 !important; min-height: 0 !important; }
-    #sheet { box-shadow: none !important; }
-    @page { size: A4; margin: 11mm; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    background: var(--page);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
   }
-  @media (max-width: 880px) {
-    #sheetwrap { padding: 16px !important; }
-    #sheet { width: 100% !important; }
-    .resume-body-grid { grid-template-columns: 1fr !important; }
-    .pad-x { padding-left: 28px !important; padding-right: 28px !important; }
-    .portfolio-grid { grid-template-columns: 1fr !important; }
+  ul { list-style: none; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  strong { color: var(--ink); font-weight: 700; }
+  .accent { color: var(--accent); }
+
+  .sheet {
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--bg);
+    padding: 40px 16px 56px;
+  }
+
+  /* ===== 히어로 ===== */
+  .hero { border-top: 1px solid var(--line); padding-top: 28px; }
+  .hero h1 {
+    font-size: clamp(32px, 7vw, 46px);
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--accent);
+    line-height: 1.2;
+  }
+  .hero h1 span { margin-right: .5em; }
+  .hero h1 span:last-child { margin-right: 0; }
+  .hero .tagline { color: var(--muted); margin-top: 8px; font-size: 15px; }
+
+  .profile {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    margin-top: 28px; padding: 22px 0;
+  }
+  .profile .name { font-size: 28px; font-weight: 800; color: var(--ink); line-height: 1.3; }
+  .profile .name small { font-size: 14px; font-weight: 400; color: var(--muted); margin-left: 8px; }
+  .profile .role { color: var(--muted); font-size: 14px; margin-top: 4px; }
+  .profile .links { font-size: 14px; color: var(--muted); align-self: flex-end; }
+
+  .summary { margin-top: 24px; font-size: 15.5px; line-height: 1.85; }
+
+  /* ===== 섹션: 좌측 라벨 + 우측 본문 (모바일은 세로) ===== */
+  .section {
+    display: grid; grid-template-columns: 1fr; gap: 12px;
+    padding: 32px 0; border-top: 1px solid var(--line);
+  }
+  .section:first-of-type { border-top: 0; }
+  .label h2 { font-size: 19px; font-weight: 800; color: var(--ink); line-height: 1.35; }
+  .label .en { font-size: 11.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--faint); margin-top: 2px; }
+
+  @media (min-width: 720px) {
+    .sheet { padding: 64px 64px 72px; margin: 40px auto; }
+    .section { grid-template-columns: 170px 1fr; gap: 28px; }
+  }
+
+  /* ===== 타임라인 ===== */
+  .tl-bar { position: relative; height: 54px; margin-bottom: 6px; }
+  .tl-seg { position: absolute; top: 20px; height: 8px; border-radius: 4px; background: var(--bar); }
+  .tl-seg.on { background: var(--accent); }
+  .tl-seg em {
+    position: absolute; bottom: 12px; left: 0; white-space: nowrap;
+    font-style: normal; font-size: 11.5px; color: var(--muted);
+  }
+  .tl-year { position: absolute; top: 34px; font-size: 11px; color: var(--faint); transform: translateX(-50%); }
+  .tl-cards { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width: 560px) { .tl-cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 720px) { .tl-cards { grid-template-columns: repeat(4, 1fr); } }
+  .tl-card { border-top: 2px solid var(--ink); padding-top: 8px; font-size: 13.5px; line-height: 1.6; }
+  .tl-card b { display: block; color: var(--ink); font-size: 14px; }
+  .tl-card .stack { color: var(--accent); font-weight: 600; margin-top: 4px; }
+  /* 좁은 화면에서는 막대 라벨이 겹치므로 카드만 보여준다 */
+  @media (max-width: 559px) { .tl-bar { display: none; } }
+
+  /* ===== 불릿 리스트 ===== */
+  .dots li { position: relative; padding-left: 16px; margin-bottom: 6px; font-size: 15px; }
+  .dots li::before {
+    content: ""; position: absolute; left: 2px; top: .7em;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  }
+
+  /* ===== 키-값 표 ===== */
+  .kv { display: grid; grid-template-columns: 1fr; gap: 2px 20px; font-size: 15px; }
+  .kv dt { color: var(--muted); font-size: 13.5px; margin-top: 10px; }
+  .kv dt:first-child { margin-top: 0; }
+  .kv dd { color: var(--text); }
+  @media (min-width: 560px) {
+    .kv { grid-template-columns: 110px 1fr; gap: 8px 20px; }
+    .kv dt { margin-top: 0; font-size: 14px; }
+  }
+
+  /* ===== 프로젝트 ===== */
+  .org { font-size: 17px; font-weight: 800; color: var(--ink); }
+  .org-desc { font-size: 14.5px; color: var(--muted); margin-top: 2px; }
+  .proj { margin-top: 22px; }
+  .proj-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; }
+  .proj-head h3 { font-size: 16px; font-weight: 700; color: var(--ink); }
+  .proj-head .date { font-size: 13.5px; color: var(--faint); white-space: nowrap; }
+  .proj .meta { font-size: 13.5px; color: var(--muted); margin: 2px 0 8px; }
+  .proj .meta b { color: var(--accent); font-weight: 600; }
+  .sub-org { margin-top: 30px; }
+  .brief { margin-top: 8px; font-size: 14.5px; }
+  .brief li { margin-bottom: 4px; }
+
+  /* ===== 문제 해결 사례 ===== */
+  .case h3 { font-size: 21px; font-weight: 800; color: var(--ink); line-height: 1.4; }
+  .case .meta { font-size: 13.5px; color: var(--muted); margin: 4px 0 16px; }
+  .steps li {
+    display: grid; grid-template-columns: 22px 64px 1fr; gap: 8px;
+    padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px;
+  }
+  .steps li:last-child { border-bottom: 1px solid var(--line); }
+  .steps .no { color: var(--accent); font-weight: 700; }
+  .steps .k { color: var(--ink); font-weight: 600; }
+  @media (max-width: 420px) {
+    .steps li { grid-template-columns: 22px 1fr; }
+    .steps li > span:last-child { grid-column: 2; }
+  }
+
+  /* ===== 자기소개 ===== */
+  .story h3 { font-size: 16px; font-weight: 700; color: var(--ink); margin-top: 22px; }
+  .story h3:first-child { margin-top: 0; }
+  .story p { margin-top: 6px; font-size: 15px; }
+
+  .closing { margin-top: 36px; }
+  .closing p { font-size: clamp(20px, 4.6vw, 24px); font-weight: 400; color: var(--ink); line-height: 1.45; }
+  .closing p strong { color: var(--accent); font-weight: 800; }
+  .closing .links { margin-top: 18px; font-size: 14px; color: var(--muted); }
+
+  .foot { margin-top: 48px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 12px; color: var(--faint); }
+
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  @media print {
+    body { background: #fff; font-size: 13px; }
+    .sheet { max-width: none; margin: 0; padding: 0; }
+    .section { grid-template-columns: 150px 1fr; break-inside: auto; }
+    .proj, .case, .tl-cards { break-inside: avoid; }
+    .tl-bar { display: block; }
+    @page { size: A4; margin: 14mm; }
   }
 </style>
 </head>
 <body>
+<main class="sheet">
 
-<div id="sheetwrap" style="min-height: 100vh; padding: 56px; display: flex; justify-content: center;">
-  <div id="sheet" style="width: 820px; background: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,.10), 0 18px 48px rgba(0,0,0,.07);">
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <h1><span>적시성</span><span>무결성</span><span>연속성</span></h1>
+    <p class="tagline">약속한 데이터를 제때, 정확하게, 멈추지 않고 전달하는 백엔드 엔지니어</p>
 
-    <!-- ============ HEADER ============ -->
-    <div class="pad-x" style="padding: 58px 64px 26px; border-bottom: 3px solid #3a5a4a;">
-      <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 18px; flex-wrap: wrap;">
-        <div>
-          <h1 style="font-size: 46px; font-weight: 800; letter-spacing: -1px; color: #1f2d27; line-height: 1;">장진익</h1>
-          <div style="font-size: 14px; font-weight: 600; letter-spacing: 2px; color: #3a5a4a; margin-top: 11px;">JANG JIN-IK · BACKEND DEVELOPER</div>
-        </div>
-        <div style="text-align: right; font-size: 12px; color: #6b7c74; line-height: 1.95; border-left: 1px solid #dfe7e2; padding-left: 18px;">
-          <div><a href="https://github.com/jinikjang88" target="_blank" rel="noopener noreferrer">github.com/jinikjang88</a></div>
-          <div>1988년생 · 경기도</div>
-        </div>
+    <div class="profile">
+      <div>
+        <div class="name">장진익<small>Jinik Jang</small></div>
+        <div class="role">백엔드 엔지니어 | 총 경력 12년 9개월</div>
       </div>
-      <div style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap;">
-        <span style="font-size: 11.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 5px 12px; border-radius: 100px;">경력 12년 4개월</span>
-        <span style="font-size: 11.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 5px 12px; border-radius: 100px;">기술등급 고급</span>
-        <span style="font-size: 11.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 5px 12px; border-radius: 100px;">정보처리기사</span>
-        <span style="font-size: 11.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 5px 12px; border-radius: 100px;">금융권 통합메시징 · Java/Spring</span>
+      <div class="links">
+        <a href="https://github.com/jinikjang88" target="_blank" rel="noopener noreferrer">github.com/jinikjang88</a>
+        | <a href="https://stellar.me.kr/">stellar.me.kr</a>
       </div>
     </div>
 
-    <!-- ============ PHILOSOPHY / SUMMARY BAND ============ -->
-    <div class="pad-x" style="padding: 36px 64px 38px; background: #f3f6f4; border-bottom: 1px solid #e3ebe6;">
-      <div style="font-family: 'Newsreader', serif; font-size: 21px; font-style: italic; font-weight: 500; line-height: 1.5; color: #2c4339; max-width: 660px;">“메시지는 누구에게나, 그리고 안전하게 전달되어야 하고, 그 신뢰를 설계하는 것은 개발자의 몫이다.”</div>
-      <div style="font-size: 13.5px; line-height: 1.75; color: #4b5650; margin-top: 18px; max-width: 690px;">금융권 메시징 시스템과 웹 백엔드를 개발하며 체득한 철학입니다. IT의 본질은 적시성, 무결성, 연속성이라고 생각합니다. 필요한 시점에 정확히 전달되어야 하고, 데이터는 손상 없이 도달해야 하며, 단절 없이 이어져야 합니다.</div>
+    <p class="summary">
+      최근 6년은 <strong>우아한형제들과 코웨이에 파견</strong>되어 채용, 예산, 서빙로봇 관리 등 백오피스 백엔드를 개발하고 운영했습니다.
+      채용 시스템은 5개 사이트의 백엔드를 주 개발자로 맡아 요건 정의부터 배포, 장애 대응까지 담당했고, 통계 대시보드의 Heavy query를 튜닝해
+      <strong>응답 시간을 10초에서 1초로</strong> 줄였습니다. 그 전 7년은 <strong>20여 개 금융사의 통합메시징 솔루션</strong>을 구축하고 운영했습니다.
+      월 2억 건급 메시지를 처리하는 비동기 분배 파이프라인을 365일 24시간 무장애로 운영하면서, 트래픽이 몰려도 받는 쪽을 지키는 유량 제어와
+      장애 시 자동 차단, 우회 발송 구조를 다뤘습니다. 서비스 백엔드의 빠른 기능 개발과 금융권의 정합성, 고가용성 운영을 모두 겪은 것이 제 강점입니다.
+    </p>
+  </header>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; margin-top: 26px; background: #d8e2dc; border: 1px solid #d8e2dc; border-radius: 3px; overflow: hidden;">
-        <div style="background: #f3f6f4; padding: 18px 22px;">
-          <div style="font-size: 22px; font-weight: 800; color: #1f2d27;">적시성</div>
-          <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #6b9080; margin-top: 5px;">Timeliness</div>
-        </div>
-        <div style="background: #f3f6f4; padding: 18px 22px;">
-          <div style="font-size: 22px; font-weight: 800; color: #1f2d27;">무결성</div>
-          <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #6b9080; margin-top: 5px;">Integrity</div>
-        </div>
-        <div style="background: #f3f6f4; padding: 18px 22px;">
-          <div style="font-size: 22px; font-weight: 800; color: #1f2d27;">연속성</div>
-          <div style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #6b9080; margin-top: 5px;">Continuity</div>
-        </div>
+  <!-- ============ 개발 타임라인 ============ -->
+  <section class="section" aria-labelledby="h-timeline">
+    <div class="label"><h2 id="h-timeline">개발 타임라인</h2><div class="en">Development Timeline</div></div>
+    <div>
+      <!-- 막대 위치는 2012~2027 구간(15년)을 100%로 환산한 값 -->
+      <div class="tl-bar" aria-hidden="true">
+        <div class="tl-seg" style="left:0%; width:17%;"><em>어다인 대리</em></div>
+        <div class="tl-seg on" style="left:20%; width:26%;"><em>어다인 과장, 팀장</em></div>
+        <div class="tl-seg on" style="left:53.3%; width:40%;"><em>메가존 과장 (우아한형제들, 코웨이 파견)</em></div>
+        <div class="tl-seg" style="left:93.3%; width:6.7%;"></div>
+        <span class="tl-year" style="left:0%;">2012</span>
+        <span class="tl-year" style="left:20%;">2015</span>
+        <span class="tl-year" style="left:46.6%;">2019</span>
+        <span class="tl-year" style="left:53.3%;">2020</span>
+        <span class="tl-year" style="left:93.3%;">2026</span>
+      </div>
+      <div class="tl-cards">
+        <div class="tl-card"><b>2012 ~ 2015</b>금융사 10여 곳 현장 구축, KB국민카드 통합어드민, SKT UAPS<div class="stack">Java, Unix</div></div>
+        <div class="tl-card"><b>2015 ~ 2019</b>20여 개 금융사 M1 운영, 씨티은행 OS 전환 PL, KB국민카드 차세대<div class="stack">Java 8, IPC Queue, Oracle</div></div>
+        <div class="tl-card"><b>2020 ~ 2026</b>우아한형제들 채용, 예산, 서빙로봇 어드민, 코웨이 공유 기능<div class="stack">Spring Boot, JPA, WebFlux, jOOQ</div></div>
+        <div class="tl-card"><b>2026 ~ 현재</b>개인 서비스 4종 기획, 개발, 오픈<div class="stack">Claude Code, Codex, Gemini</div></div>
       </div>
     </div>
+  </section>
 
-    <!-- ============ BODY: 2-COLUMN (career summary + sidebar) ============ -->
-    <div class="resume-body-grid" style="display: grid; grid-template-columns: 1fr 270px;">
+  <!-- ============ 핵심 성과 ============ -->
+  <section class="section" aria-labelledby="h-highlights">
+    <div class="label"><h2 id="h-highlights">핵심 성과</h2><div class="en">Highlights</div></div>
+    <ul class="dots">
+      <li><strong>통계 대시보드 응답 10초에서 1초로 단축</strong> (우아한형제들 채용 시스템, 실행 계획 분석과 복합 커버링 인덱스)</li>
+      <li><strong>월 2억 건급 메시지 파이프라인 365일 무장애 운영</strong> (단일 큐 초당 2,000건, 유량 제어와 우회 발송)</li>
+      <li><strong>500여 개 업무 인터페이스 유실 없는 전환</strong> (KB국민카드 차세대, 전 업무 모의 발송 전수 테스트)</li>
+      <li><strong>Unix-AIX에서 Linux로 OS 무장애 전환</strong> (씨티은행 통합메시징, PL)</li>
+    </ul>
+  </section>
 
-      <!-- ===== MAIN: CAREER SUMMARY ===== -->
-      <div style="padding: 40px 32px 48px 64px;">
-        <div style="font-size: 13px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #3a5a4a; margin-bottom: 26px;">경력 요약 · Career</div>
+  <!-- ============ 보유 기술 ============ -->
+  <section class="section" aria-labelledby="h-skills">
+    <div class="label"><h2 id="h-skills">보유 기술</h2><div class="en">Skills</div></div>
+    <dl class="kv">
+      <dt>언어</dt><dd>Java, Python, JavaScript</dd>
+      <dt>프레임워크</dt><dd>Spring Boot, Spring WebFlux, JPA, QueryDSL, jOOQ, MyBatis, FreeMarker, Vue.js</dd>
+      <dt>DB</dt><dd>MySQL, MariaDB, Oracle, MSSQL, Tibero</dd>
+      <dt>메시징</dt><dd>OS IPC Queue, File Queue, 비동기 분배 파이프라인</dd>
+      <dt>인프라, 운영</dt><dd>Linux, Unix-AIX, HP-UX, AWS S3, Jenkins</dd>
+      <dt>협업</dt><dd>Git, GitLab, GitHub, Jira, Confluence</dd>
+      <dt>AI 도구</dt><dd>Claude Code, Codex, Gemini</dd>
+    </dl>
+  </section>
 
-        <!-- 메가존 -->
-        <div style="position: relative; padding-left: 26px; border-left: 2px solid #dfe7e2; padding-bottom: 30px; break-inside: avoid;">
-          <span style="position: absolute; left: -7px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: #3a5a4a; border: 2px solid #ffffff; box-shadow: 0 0 0 1px #dfe7e2;"></span>
-          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-            <div style="font-size: 18px; font-weight: 800; color: #1f2d27;">메가존(주)</div>
-            <div style="font-size: 12px; color: #8a9a92; white-space: nowrap;">2020.02 - 2026.03 · 6년 1개월</div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px; flex-wrap: wrap;">
-            <span style="font-size: 12.5px; color: #6b7c74;">웹서비스 ITO팀 · 과장</span>
-            <span style="font-size: 11px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 3px 9px; border-radius: 100px;">채용시스템 개발</span>
-          </div>
-          <div style="font-size: 13px; line-height: 1.65; color: #4b5650; margin-top: 11px;">코웨이 및 우아한형제들 백오피스 프로젝트를 전담하며 채용, 예산, 서빙로봇 등 다수 시스템을 백엔드 개발. 테이블설계, Spring Boot, JPA 기반 RESTful API 설계와 인프라 및 운영 업무를 지원하였습니다.</div>
-          <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 13px;">
-            <span style="font-size: 11px; font-weight: 600; color: #2c4339; background: #e8efe9; padding: 4px 10px; border-radius: 4px;">Java 11</span>
-            <span style="font-size: 11px; font-weight: 600; color: #2c4339; background: #e8efe9; padding: 4px 10px; border-radius: 4px;">Spring Boot</span>
-						<span style="font-size: 11px; font-weight: 600; color: #2c4339; background: #e8efe9; padding: 4px 10px; border-radius: 4px;">WebFlux</span>
-						<span style="font-size: 11px; font-weight: 600; color: #2c4339; background: #e8efe9; padding: 4px 10px; border-radius: 4px;">JPA, QueryDSL, jOOQ</span>
-            <span style="font-size: 11px; font-weight: 600; color: #2c4339; background: #e8efe9; padding: 4px 10px; border-radius: 4px;">MySQL</span>
-            <span style="font-size: 11px; font-weight: 600; color: #2c4339; background: #e8efe9; padding: 4px 10px; border-radius: 4px;">AWS S3</span>
-          </div>
-        </div>
+  <!-- ============ 최근 프로젝트 ============ -->
+  <section class="section" aria-labelledby="h-recent">
+    <div class="label"><h2 id="h-recent">최근 프로젝트</h2><div class="en">Recent Projects</div></div>
+    <div>
+      <div class="org">메가존(주) 웹서비스 ITO팀 과장 | 2020.02 ~ 2026.02</div>
+      <p class="org-desc">메가존 소속으로 우아한형제들, 코웨이에 파견되어 백오피스 백엔드를 개발하고 운영했습니다.</p>
 
-        <!-- 어다인 2차 -->
-        <div style="position: relative; padding-left: 26px; border-left: 2px solid #dfe7e2; padding-bottom: 30px; break-inside: avoid;">
-          <span style="position: absolute; left: -7px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: #3a5a4a; border: 2px solid #ffffff; box-shadow: 0 0 0 1px #dfe7e2;"></span>
-          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-            <div style="font-size: 18px; font-weight: 800; color: #1f2d27;">어다인(주)</div>
-            <div style="font-size: 12px; color: #8a9a92; white-space: nowrap;">2015.04 - 2019.09 · 4년 6개월</div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px; flex-wrap: wrap;">
-            <span style="font-size: 12.5px; color: #6b7c74;">솔루션개발부 · 과장 · 팀장</span>
-            <span style="font-size: 11px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 3px 9px; border-radius: 100px;">PL</span>
-          </div>
-          <div style="font-size: 13px; line-height: 1.65; color: #4b5650; margin-top: 11px;">통합메시징 솔루션 ‘M1 프레임워크’로 약 20개 금융기관의 메시징 시스템을 구축, 유지보수. KB국민카드 차세대 등 다수 프로젝트을 수행했습니다.</div>
-          <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 13px;">
-            <span style="font-size: 11px; font-weight: 600; color: #5c504a; background: #efe9e3; padding: 4px 10px; border-radius: 4px;">KB국민카드</span>
-            <span style="font-size: 11px; font-weight: 600; color: #5c504a; background: #efe9e3; padding: 4px 10px; border-radius: 4px;">삼성화재</span>
-            <span style="font-size: 11px; font-weight: 600; color: #5c504a; background: #efe9e3; padding: 4px 10px; border-radius: 4px;">현대해상</span>
-            <span style="font-size: 11px; font-weight: 600; color: #5c504a; background: #efe9e3; padding: 4px 10px; border-radius: 4px;">씨티, 하나은행</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 9px; margin-top: 13px; padding: 9px 13px; background: #fbf6ec; border: 1px solid #f0e6d2; border-radius: 4px;">
-            <span style="font-size: 14px;">★</span>
-            <span style="font-size: 12px; color: #7a6a4a; line-height: 1.4;"><span style="font-weight: 700; color: #5e5236;">KB국민카드 차세대 프로젝트</span> - 우수 SI업체 인원 선정, 포상</span>
-          </div>
-        </div>
-
-        <!-- 에이베리 -->
-        <div style="position: relative; padding-left: 26px; border-left: 2px solid #dfe7e2; padding-bottom: 30px; break-inside: avoid;">
-          <span style="position: absolute; left: -7px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: #6b9080; border: 2px solid #ffffff; box-shadow: 0 0 0 1px #dfe7e2;"></span>
-          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-            <div style="font-size: 18px; font-weight: 800; color: #1f2d27;">(주)에이베리시스템</div>
-            <div style="font-size: 12px; color: #8a9a92; white-space: nowrap;">2014.12 - 2015.04 · 5개월</div>
-          </div>
-          <div style="font-size: 12.5px; color: #6b7c74; margin-top: 4px;">솔루션지원부 · 주임</div>
-          <div style="font-size: 13px; line-height: 1.65; color: #4b5650; margin-top: 11px;">SKT UAPS 솔루션 개발 및 유지보수를 지원하며 모바일 통신 분야 경험을 쌓았습니다.</div>
-        </div>
-
-        <!-- 어다인 1차 -->
-        <div style="position: relative; padding-left: 26px; border-left: 2px solid #dfe7e2; break-inside: avoid;">
-          <span style="position: absolute; left: -7px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: #6b9080; border: 2px solid #ffffff; box-shadow: 0 0 0 1px #dfe7e2;"></span>
-          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-            <div style="font-size: 18px; font-weight: 800; color: #1f2d27;">어다인(주) <span style="font-size: 13px; font-weight: 600; color: #8a9a92;"></span></div>
-            <div style="font-size: 12px; color: #8a9a92; white-space: nowrap;">2012.12 - 2014.09 · 1년 4개월</div>
-          </div>
-          <div style="font-size: 12.5px; color: #6b7c74; margin-top: 4px;">솔루션개발부 · 대리</div>
-          <div style="font-size: 13px; line-height: 1.65; color: #4b5650; margin-top: 11px;">통합메시징 솔루션 ‘M1 프레임워크’ 로 KB국민카드에서 SI 기초를 다지고, KB국민은행, 대구은행, 신한생명 등의 메시징/웹 구축 및 솔루션 유지보수를 담당했습니다.</div>
-        </div>
-      </div>
-
-      <!-- ===== SIDEBAR ===== -->
-      <div style="background: #f3f6f4; padding: 40px 30px 48px; display: flex; flex-direction: column; gap: 26px;">
-        <div>
-          <div style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #3a5a4a; margin-bottom: 14px;">기술 · Skills</div>
-          <div style="display: flex; flex-direction: column; gap: 13px; font-size: 12px; color: #4b5650; line-height: 1.5;">
-            <div><div style="font-weight: 700; color: #2c4339; margin-bottom: 3px;">Language</div>Java 1.6 / 7 / 8 / 11, JavaScript, Python</div>
-            <div><div style="font-weight: 700; color: #2c4339; margin-bottom: 3px;">Framework</div>Spring Boot, Spring, JPA, QueryDSL, jOOQ, MyBatis, WebFlux, FreeMarker, Vue 2, Node.js</div>
-            <div><div style="font-weight: 700; color: #2c4339; margin-bottom: 3px;">Database</div>MySQL, Oracle, Tibero, MSSQL</div>
-            <div><div style="font-weight: 700; color: #2c4339; margin-bottom: 3px;">Cloud · Infra</div>AWS S3, SQS, SNS, Linux, Unix-AIX</div>
-            <div><div style="font-weight: 700; color: #2c4339; margin-bottom: 3px;">통신 · 협업</div>RESTful API, TCP/IP, FTP, Jira, Confluence, GitLab, Slack</div>
-          </div>
-        </div>
-
-        <div style="height: 1px; background: #e1e9e4;"></div>
-
-        <div>
-          <div style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #3a5a4a; margin-bottom: 14px;">특수기술 · 숙련도</div>
-          <div style="display: flex; flex-direction: column; gap: 8px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #4b5650;"><span>Java, JSP, JavaScript</span><span style="font-size: 10px; font-weight: 800; color: #2c4339; background: #d9e7df; padding: 2px 8px; border-radius: 100px;">A</span></div>
-            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #4b5650;"><span>Spring</span><span style="font-size: 10px; font-weight: 800; color: #2c4339; background: #d9e7df; padding: 2px 8px; border-radius: 100px;">A</span></div>
-            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #4b5650;"><span>Vue, Python</span><span style="font-size: 10px; font-weight: 800; color: #6b7c74; background: #e6ebe8; padding: 2px 8px; border-radius: 100px;">B</span></div>
-            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #4b5650;"><span>HTML5, CSS</span><span style="font-size: 10px; font-weight: 800; color: #6b7c74; background: #e6ebe8; padding: 2px 8px; border-radius: 100px;">B</span></div>
-          </div>
-        </div>
-
-        <div style="height: 1px; background: #e1e9e4;"></div>
-
-        <div>
-          <div style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #3a5a4a; margin-bottom: 14px;">포트폴리오 · Links</div>
-          <div style="display: flex; flex-direction: column; gap: 11px; font-size: 12px; color: #4b5650; line-height: 1.5;">
-            <div><div style="font-weight: 700; color: #2c4339; margin-bottom: 2px;">GitHub</div><a href="https://github.com/jinikjang88" target="_blank" rel="noopener noreferrer" style="color: #3a5a4a;">github.com/jinikjang88</a></div>
-            <div><div style="font-weight: 700; color: #2c4339; margin-bottom: 2px;">DevSmith</div><a href="https://devsmith.kr" target="_blank" rel="noopener noreferrer" style="color: #3a5a4a;">devsmith.kr</a></div>
-            <div><div style="font-weight: 700; color: #2c4339; margin-bottom: 2px;">Wolkang Legend</div><a href="https://wolkanglegend.com" target="_blank" rel="noopener noreferrer" style="color: #3a5a4a;">wolkanglegend.com</a></div>
-          </div>
-        </div>
-
-        <div style="height: 1px; background: #e1e9e4;"></div>
-
-        <div>
-          <div style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #3a5a4a; margin-bottom: 14px;">학력 · Education</div>
-          <div style="display: flex; flex-direction: column; gap: 11px; font-size: 12px; color: #4b5650; line-height: 1.5;">
-            <div><div style="font-weight: 700; color: #2b3631;">안동대학교</div>컴퓨터공학 (학사) · 학점 3.43/4.5<br><span style="color: #9aa8a1;">2007.03 - 2013.02</span></div>
-            <div><div style="font-weight: 700; color: #2b3631;">현풍고등학교</div>인문계<br><span style="color: #9aa8a1;">2004.03 - 2007.02</span></div>
-          </div>
-        </div>
-
-        <div style="height: 1px; background: #e1e9e4;"></div>
-
-        <div>
-          <div style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #3a5a4a; margin-bottom: 14px;">병역 · Military</div>
-          <div style="font-size: 12px; color: #4b5650; line-height: 1.5;">예비역 · 육군 병장 (군필)</div>
-        </div>
-
-        <div style="height: 1px; background: #e1e9e4;"></div>
-
-        <div>
-          <div style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #3a5a4a; margin-bottom: 14px;">자격 · Certificate</div>
-          <div style="font-size: 12px; color: #4b5650; line-height: 1.5;">정보처리기사<br><span style="color: #9aa8a1;">한국산업인력공단 · 2014.08</span></div>
-        </div>
-
-        <div style="height: 1px; background: #e1e9e4;"></div>
-
-        <div>
-          <div style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #3a5a4a; margin-bottom: 14px;">교육 · Training</div>
-          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 11.5px; color: #4b5650; line-height: 1.45;">
-            <div>파이썬 친절한 코딩클래스 <span style="color: #9aa8a1;">2025 · 메가존아이티</span></div>
-            <div>텍스트 커뮤니케이션, 비즈니스 문해력 <span style="color: #9aa8a1;">2025 · 메가존아이티</span></div>
-            <div>스프링 MVC 2편 - 백엔드 웹 개발 <span style="color: #9aa8a1;">2022 · 인프런</span></div>
-            <div>한이음 IT인턴십 기초소양 <span style="color: #9aa8a1;">2012 · 정보산업연합회</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ============ 경력기술서 · SKILL INVENTORY ============ -->
-    <div class="pad-x" style="padding: 44px 64px 20px;">
-      <div style="font-size: 22px; font-weight: 800; color: #1f2d27; letter-spacing: -0.3px;">경력기술서 <span style="font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6b9080;">Skill Inventory</span></div>
-      <div style="font-size: 13px; color: #6b7c74; margin-top: 8px;">프로젝트별 수행 업무와 개발 환경입니다.</div>
-    </div>
-
-    <!-- ----- 메가존 cards ----- -->
-    <div class="pad-x" style="padding: 14px 64px 0;">
-      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
-        <div style="font-size: 15px; font-weight: 800; color: #3a5a4a;">메가존(주)</div>
-        <div style="flex: 1; height: 1px; background: #e3ebe6;"></div>
-        <div style="font-size: 12px; color: #8a9a92;">2020.02 - 2026.03 · 우아한형제들/코웨이 백오피스</div>
-      </div>
-
-      <!-- card: 코웨이 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 14px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">코웨이 디지털세일즈 앱 개선</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2025.12 - 2026.02</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 코웨이</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">개발</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">코웨이 세일즈 전용 앱 신규 콘텐츠 ‘공유하기’ 기능의 테이블 설계 및 백엔드 개발을 담당했습니다.</div>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Linux (Intel)</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">MySQL</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 11</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">RESTful API</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">Spring Framework, Spring Boot, JPA, jOOQ, MyBatis</span>
-        </div>
-      </div>
-
-      <!-- card: 채용 운영 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 14px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">우아한형제들 채용 사이트 운영 및 개발</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2023.07 - 2025.12</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 우아한형제들</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">분석</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">설계</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">개발</span>
-					<span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">운영</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">우아한형제들/우아한청년들 인재채용, 비마트 크루채용, 어드민, 심사관 사이트의 운영 및 개발, 신규 요건 정의, 테이블 설계, 외부 API 연동을 담당했습니다.</div>
-        <ul style="margin-top: 10px; display: flex; flex-direction: column; gap: 5px;">
-          <li style="font-size: 12px; line-height: 1.5; color: #4b5650; padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: #9bb3a6;">·</span>신규 기능 개발로 어드민/심사관 사용자 경험 개선, 시스템 안정 운영</li>
-          <li style="font-size: 12px; line-height: 1.5; color: #4b5650; padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: #9bb3a6;">·</span>장애 응대 및 heavy query 개선으로 시스템 안정성 유지</li>
-					<li style="font-size: 12px; line-height: 1.5; color: #4b5650; padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: #9bb3a6;">·</span>외부 API 정의 및 테이블 설계, 실시간, 배치 연동 개발</li>
-					<li style="font-size: 12px; line-height: 1.5; color: #4b5650; padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: #9bb3a6;">·</span>매년 진행되는 ISMS-P 인증심사 인터뷰 진행</li>
+      <div class="proj">
+        <div class="proj-head"><h3>우아한형제들 채용 시스템 운영, 개발</h3><span class="date">2023.07 ~ 2025.12</span></div>
+        <div class="meta"><b>Technical Lead</b> 백엔드 주 개발자, 운영 | Java 11, Spring Boot, JPA, MySQL, GitLab</div>
+        <ul class="dots">
+          <li>인재채용, 크루채용, 어드민, 심사관 등 <strong>5개 사이트 백엔드</strong>를 요건 정의부터 배포, 장애 대응까지 담당</li>
+          <li>통계 대시보드 Heavy query를 실행 계획으로 분석해 <strong>응답 10초에서 1초로 단축</strong> (<a href="#case-1" class="accent">문제 해결 사례 1</a>)</li>
+          <li>B마트 이용동의 정책 변경에 따른 기존 지원자 데이터 일괄 마이그레이션</li>
+          <li>Workday, HRWorx 신규 인사시스템 연동</li>
+          <li>ISMS-P 인증심사 대응: 개인정보 흐름 분석, 첨부파일 접근 취약점 조치, 비밀번호 해시 알고리즘 강화</li>
+          <li>자주 생기는 문의와 장애 대응 방법을 문서화</li>
         </ul>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Linux (Intel)</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">MySQL</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 11</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">RESTful API</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">Spring Framework, Spring Boot, JPA, QueryDSL, AWS S3</span>
-        </div>
       </div>
 
-      <!-- card: 채용 고도화 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 14px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">우아한형제들 채용 사이트 고도화 프로젝트</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2023.01 - 2023.06</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 우아한형제들</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">분석</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">설계</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">개발</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">채용 시스템 개편하여 프로세스 효율성과 지원자 경험을 향상시키는 고도화 백엔드 개발을 수행했습니다.</div>
-        <ul style="margin-top: 10px; display: flex; flex-direction: column; gap: 5px;">
-          <li style="font-size: 12px; line-height: 1.5; color: #4b5650; padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: #9bb3a6;">·</span>수습 대상자 면담지 관리 시스템 개발</li>
-          <li style="font-size: 12px; line-height: 1.5; color: #4b5650; padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: #9bb3a6;">·</span>공고, 직무, 지원자별 대시보드 및 단위/통합 테스트 개발</li>
+      <div class="proj">
+        <div class="proj-head"><h3>코웨이 디지털세일즈 앱 콘텐츠 공유 기능</h3><span class="date">2025.12 ~ 2026.02</span></div>
+        <div class="meta"><b>백엔드 개발</b> | Java 11, Spring Boot, MySQL, jOOQ, MyBatis, JPA</div>
+        <ul class="dots">
+          <li>공유 기능 테이블 설계와 API 개발</li>
+          <li>MyBatis와 JPA가 섞인 코드베이스에서 신규 조회를 jOOQ로 작성해 컴파일 시점 타입 안정성 확보</li>
         </ul>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Linux (Intel)</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">MySQL</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 11</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">RESTful API</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">Spring Framework, Spring Boot, JPA, QueryDSL</span>
-        </div>
       </div>
 
-      <!-- card: 예산 관리 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 14px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">우아한형제들 예산 관리 어드민 구축</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2022.05 - 2022.12</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 우아한형제들</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">분석</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">설계</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">개발</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">예산 계획부터 집행, 결산까지 전 과정을 시스템화한 예산 관리 어드민을 구축했습니다.</div>
-        <ul style="margin-top: 10px; display: flex; flex-direction: column; gap: 5px;">
-          <li style="font-size: 12px; line-height: 1.5; color: #4b5650; padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: #9bb3a6;">·</span>예산 과제 관리, 부서/프로젝트별 예산 할당, 조정 기능 구현</li>
-          <li style="font-size: 12px; line-height: 1.5; color: #4b5650; padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: #9bb3a6;">·</span>예산 결재(승인) 시스템 및 AWS S3 파일 업/다운로드 개발</li>
+      <div class="proj">
+        <div class="proj-head"><h3>우아한형제들 채용 고도화</h3><span class="date">2023.01 ~ 2023.06</span></div>
+        <div class="meta"><b>백엔드 개발</b> | GitLab</div>
+        <ul class="dots">
+          <li>수습 면담지 관리, 공고, 직무, 지원자별 대시보드 개발</li>
+          <li>핵심 로직에 단위, 통합 테스트를 구축해 잦은 정책 변경에도 회귀 결함 방지</li>
         </ul>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Linux (Intel)</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">MySQL</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 11</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">RESTful API</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">Spring Boot, JPA, QueryDSL, AWS S3, Node.js</span>
-        </div>
       </div>
 
-      <!-- card: 서빙로봇 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 14px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">우아한형제들 서빙로봇 관리 어드민 구축</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2020.08 - 2022.05</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 우아한형제들</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">분석</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">설계</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">개발</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">서빙로봇 운영, 관리를 위한 종합 어드민 시스템을 구축하고 로봇 연동 프로그램을 개발했습니다. (POC 수행)</div>
-        <ul style="margin-top: 10px; display: flex; flex-direction: column; gap: 5px;">
-          <li style="font-size: 12px; line-height: 1.5; color: #4b5650; padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: #9bb3a6;">·</span>로봇 이력 관리 시스템 및 매장, 로봇 현황 대시보드로 모니터링 체계 확립</li>
-          <li style="font-size: 12px; line-height: 1.5; color: #4b5650; padding-left: 14px; position: relative;"><span style="position: absolute; left: 0; color: #9bb3a6;">·</span>AWS S3, Google Spread Sheet 연동 API, 서빙로봇, 공유주방 호출 시스템 연동 (Node.js)</li>
+      <div class="proj">
+        <div class="proj-head"><h3>우아한형제들 예산 관리 어드민 구축</h3><span class="date">2022.05 ~ 2022.12</span></div>
+        <div class="meta"><b>백엔드 개발</b> | AWS S3, GitLab</div>
+        <ul class="dots">
+          <li>예산 계획, 집행, 결산 라이프사이클 시스템화, 부서와 프로젝트별 예산 할당, 결재 흐름 구현</li>
         </ul>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Linux (Intel)</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">MySQL</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 11, JavaScript, Node.js</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">RESTful API, TCP/IP</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">Spring Boot, Spring WebFlux, JPA, QueryDSL, AWS S3, SQS, SNS</span>
-        </div>
       </div>
 
-      <!-- card: 아카데미 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 8px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">우아한형제들 사장님 아카데미 구축</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2020.02 - 2020.08</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 우아한형제들</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">분석</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">설계</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">개발</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">사장님 아카데미 어드민/사이트의 백엔드, 프론트엔드를 개발했습니다. (공지사항, 언론보도, 장사비법 콘텐츠 도메인, 페이스북, 카카오톡 공유)</div>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Linux (Intel)</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">MySQL</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 11, JavaScript</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">RESTful API</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">Spring Boot, JPA, QueryDSL, Vue 2.0</span>
+      <div class="proj">
+        <div class="proj-head"><h3>우아한형제들 서빙로봇 관리 어드민 구축</h3><span class="date">2020.08 ~ 2022.05</span></div>
+        <div class="meta"><b>백엔드 개발</b> | Spring Boot, Spring WebFlux, MySQL</div>
+        <ul class="dots">
+          <li>Spring WebFlux 기반으로 서빙로봇, 공유주방 호출 시스템을 논블로킹 연동</li>
+          <li>로봇 이력, 매장 현황 대시보드 개발, AWS S3와 Google Sheets API 연동</li>
+        </ul>
+      </div>
+
+      <div class="proj">
+        <div class="proj-head"><h3>우아한형제들 사장님 아카데미 어드민, 사이트</h3><span class="date">2020.02 ~ 2020.08</span></div>
+        <div class="meta"><b>백엔드 개발</b></div>
+        <ul class="dots">
+          <li>공지, 언론보도, 장사비법 콘텐츠와 SNS 공유 기능 개발</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 이전 프로젝트 ============ -->
+  <section class="section" aria-labelledby="h-previous">
+    <div class="label"><h2 id="h-previous">이전 프로젝트</h2><div class="en">Previous Projects</div></div>
+    <div>
+      <div class="org">어다인주식회사 솔루션사업부 과장, 팀장 | 2015.04 ~ 2019.09</div>
+      <p class="org-desc">금융권 통합메시징(SMS, PUSH, 알림톡, LINE) 솔루션 M1의 고객사 구축, 연동 개발, 운영을 맡았습니다.</p>
+
+      <div class="proj">
+        <div class="proj-head"><h3>금융권 메시징 솔루션(M1) 운영</h3><span class="date">2015.04 ~ 2019.09</span></div>
+        <div class="meta"><b>People Management</b> 팀장 | KB국민은행, 신한은행, 씨티은행, 삼성화재 등 20여 개 금융사 | Java 8, IPC Queue, File Queue, Oracle</div>
+        <ul class="dots">
+          <li><strong>월 2억 건급, 단일 큐 초당 2,000건</strong> 비동기 분배 파이프라인 365일 24시간 무장애 운영 (<a href="#case-2" class="accent">문제 해결 사례 2</a>)</li>
+          <li>중계사 다중화, 장애 시 자동 차단과 우회 발송(Circuit Breaking, Failover), DR센터 전환 지원</li>
+          <li>부산은행 대량입출금 메시지: 동일 수신자 기준 순서 보장 큐잉(역전 방지), 고유 키 기반 중복 발송 차단</li>
+        </ul>
+      </div>
+
+      <div class="proj">
+        <div class="proj-head"><h3>KB국민카드 차세대 통합 프로젝트</h3><span class="date">2018.10 ~ 2019.09</span></div>
+        <div class="meta"><b>개발</b> | M1 프레임워크</div>
+        <ul class="dots">
+          <li>기존, 신규 <strong>500여 개 업무 인터페이스</strong>(실시간 승인 전문, 배치) 규격 변경 대응과 수정 개발</li>
+          <li>업무 담당자별 규격 협의와 변경 관리, 전 업무 모의 발송 전수 테스트로 유실 없이 오픈</li>
+        </ul>
+      </div>
+
+      <div class="proj">
+        <div class="proj-head"><h3>씨티은행 통합메시징 OS 전환</h3><span class="date">2018.01 ~ 2018.03</span></div>
+        <div class="meta"><b>Project Lead</b> PL | Unix-AIX, Linux-RedHat</div>
+        <ul class="dots">
+          <li>전환 시점과 즉시 롤백 기준을 고객사와 먼저 합의한 뒤 분석, 설계, 테스트, 이행까지 수행해 무장애 전환</li>
+        </ul>
+      </div>
+
+      <div class="proj">
+        <div class="proj-head"><h3>현대해상 통합메시징 DB 암호화, 알림톡 연동</h3><span class="date">2016.04 ~ 2017.10</span></div>
+        <div class="meta"><b>Project Lead</b> PL | Java 1.7, Spring Boot, Tibero, MyBatis</div>
+        <ul class="dots">
+          <li>개인정보 컬럼 암호화 정책 대응 솔루션과 웹 개발, 카카오 알림톡 모듈 연동</li>
+        </ul>
+      </div>
+
+      <div class="proj">
+        <div class="proj-head"><h3>KEB하나은행 텍스트뱅킹 MO 서비스 구축</h3><span class="date">2016.09 ~ 2016.12</span></div>
+        <div class="meta"><b>개발</b></div>
+        <ul class="dots">
+          <li>국내 최초 문자 뱅킹 서비스의 MO 수신 처리, 뱅킹 업무, 메시징 채널 연동 개발</li>
+        </ul>
+      </div>
+
+      <div class="sub-org">
+        <div class="org">(주)에이베리시스템 솔루션지원부 주임 | 2014.12 ~ 2015.04</div>
+        <ul class="dots brief">
+          <li>SKT UAPS(통합 가입자 인증, 프로비저닝) 솔루션 개발, 유지보수, Unix 운영 지원</li>
+        </ul>
+      </div>
+
+      <div class="sub-org">
+        <div class="org">어다인주식회사 솔루션사업부 대리 | 2012.12 ~ 2014.09</div>
+        <ul class="dots brief">
+          <li>첫 업무로 동양증권(현 유안타증권) 개발서버에 메시징 프레임워크를 설치하고 테스트 발송 성공</li>
+          <li>KB국민카드 통합어드민 웹 구축 (Java 1.6, Spider, Oracle, MSSQL), 개인정보 DB 암호화 API 연동</li>
+          <li>대구은행 발송사 연동과 분배 통계 개발, 10여 개 고객사 현장 구축과 야간 정기 점검</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 문제 해결 사례 1 ============ -->
+  <section class="section case" id="case-1" aria-labelledby="h-case1">
+    <div class="label"><h2>문제 해결 사례 1</h2><div class="en">Problem Solving</div></div>
+    <div>
+      <h3 id="h-case1">통계 대시보드 응답 <span class="accent">10초에서 1초로</span></h3>
+      <div class="meta">우아한형제들 채용 시스템 | 2023.07 ~ 2025.12 | MySQL, JPA</div>
+      <ol class="steps">
+        <li><span class="no">1</span><span class="k">문제</span><span>공고, 직무, 지원자 통계 대시보드는 운영 담당자가 상시로 여는 화면인데, 조회할 때마다 응답이 느려 업무 흐름이 끊겼습니다.</span></li>
+        <li><span class="no">2</span><span class="k">원인</span><span>여러 테이블을 조인해 집계하는 쿼리에 와일드카드 검색이 겹쳐 인덱스를 제대로 타지 못했습니다.</span></li>
+        <li><span class="no">3</span><span class="k">측정</span><span>대시보드 응답이 <strong>약 10초</strong>까지 걸렸고, 상시 조회 화면이라 체감 영향이 컸습니다.</span></li>
+        <li><span class="no">4</span><span class="k">해결책</span><span>EXPLAIN 실행 계획으로 병목 구간을 특정했습니다.</span></li>
+        <li><span class="no">5</span><span class="k">과정</span><span><strong>복합 커버링 인덱스</strong>를 적용하고 쿼리를 재작성했습니다.</span></li>
+        <li><span class="no">6</span><span class="k">평가</span><span>응답 시간이 <strong>10초에서 1초로</strong> 줄어 운영 화면의 지연 구간이 사라졌습니다.</span></li>
+        <li><span class="no">7</span><span class="k">비고</span><span>자주 생기는 문의와 장애 대응 방법을 문서로 정리해, 비슷한 문제를 팀이 빠르게 다룰 수 있게 했습니다.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 문제 해결 사례 2 ============ -->
+  <section class="section case" id="case-2" aria-labelledby="h-case2">
+    <div class="label"><h2>문제 해결 사례 2</h2><div class="en">Problem Solving</div></div>
+    <div>
+      <h3 id="h-case2">월 2억 건 파이프라인 <span class="accent">365일 무장애</span></h3>
+      <div class="meta">어다인 금융권 통합메시징 M1 | 2015.04 ~ 2019.09 | Java 8, IPC Queue, File Queue</div>
+      <ol class="steps">
+        <li><span class="no">1</span><span class="k">문제</span><span>트래픽이 몰리는 시점에 고객사 내부망과 중계사가 과부하에 걸리고, 중계사 하나가 멈추면 발송 전체가 멈출 위험이 있었습니다.</span></li>
+        <li><span class="no">2</span><span class="k">원인</span><span>보내는 쪽 처리량은 충분했지만 받는 쪽 수용량이 고객사, 중계사마다 제각각이었습니다.</span></li>
+        <li><span class="no">3</span><span class="k">측정</span><span><strong>월 2억 건급</strong> 메시지, <strong>단일 큐 초당 2,000건</strong>을 20여 개 금융사에 처리하는 규모였습니다.</span></li>
+        <li><span class="no">4</span><span class="k">해결책</span><span>리스너, 접수 큐, 분배기, 발송과 DB 큐로 이어지는 비동기 파이프라인에서 속도를 높이기보다 다운스트림을 보호하는 쪽을 택했습니다.</span></li>
+        <li><span class="no">5</span><span class="k">과정</span><span>수신 측 한계에 맞춘 <strong>유량 제어(Throttling)</strong>, 재기동 시 잔여 데이터 <strong>멱등 재처리</strong>, 중계사 다중화와 장애 시 자동 차단, <strong>우회 발송(Circuit Breaking, Failover)</strong>, DR센터 전환을 적용했습니다.</span></li>
+        <li><span class="no">6</span><span class="k">평가</span><span>20여 개 금융사를 <strong>365일 24시간 무장애</strong>로 운영했습니다.</span></li>
+        <li><span class="no">7</span><span class="k">비고</span><span>같은 구조를 부산은행 대량입출금 메시지에 확장해 동일 수신자 순서 보장과 고유 키 중복 차단까지 적용했습니다.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 자기소개 ============ -->
+  <section class="section" aria-labelledby="h-about">
+    <div class="label"><h2 id="h-about">자기소개</h2><div class="en">About Me</div></div>
+    <div class="story">
+      <h3>혼자 해낸 첫 테스트 발송</h3>
+      <p>신입 시절 첫 업무로 혼자 증권사 개발서버에 메시징 프레임워크를 설치하고 첫 테스트 발송을 성공시켰습니다. 그 뒤 10여 개 금융사 현장을 돌며 구축과 야간 점검을 맡았고, 고객사 서버 앞에서 문제를 끝까지 붙잡는 습관이 이때 생겼습니다.</p>
+      <h3>멈추면 안 되는 시스템을 운영한 7년</h3>
+      <p>팀장으로 20여 개 금융사 메시징 시스템을 운영하면서 기술의 화려함보다 약속한 데이터를 끝까지 전달하는 것이 신뢰라는 것을 배웠습니다. 씨티은행 OS 전환에서는 코드보다 되돌릴 기준을 먼저 세웠고, 이 원칙은 이후 우아한형제들 지원자 데이터 마이그레이션에도 그대로 적용했습니다.</p>
+      <h3>서비스 백엔드와 AI 도구로 넓힌 6년</h3>
+      <p>우아한형제들과 코웨이에서는 빠르게 바뀌는 요구사항 속에서 테스트로 회귀를 막고 실행 계획으로 성능을 잡는 서비스 백엔드 방식을 익혔습니다. 2026년부터는 Claude Code, Codex, Gemini 같은 AI 도구로 개인 서비스를 기획부터 운영까지 혼자 만들고 있습니다. 설계 방향을 먼저 정하고, AI가 만든 코드는 직접 검토하고 테스트한 뒤 반영합니다.</p>
+    </div>
+  </section>
+
+  <!-- ============ 개인 활동 ============ -->
+  <section class="section" aria-labelledby="h-side">
+    <div class="label"><h2 id="h-side">개인 활동</h2><div class="en">Side Projects</div></div>
+    <ul class="dots">
+      <li><strong>한글 한획</strong> (<a href="https://hanhoek.com" target="_blank" rel="noopener noreferrer" class="accent">hanhoek.com</a>) 아이들 한글 학습 사이트 기획, 개발, 오픈. 앱은 Google Play 심사 중</li>
+      <li><strong>게임 개발</strong> (<a href="https://wolkanglegend.com" target="_blank" rel="noopener noreferrer" class="accent">wolkanglegend.com</a>) 개인 게임 기획, 구현, 공개</li>
+      <li><strong>1인 전자책 출판</strong> (<a href="https://devsmith.kr" target="_blank" rel="noopener noreferrer" class="accent">devsmith.kr</a>) 출판 사이트 제작, 운영. 전자책 2권 교보문고 판매 중</li>
+      <li><strong>포트폴리오</strong> (<a href="https://stellar.me.kr/" class="accent">stellar.me.kr</a>) 경력과 개인 프로젝트 정리</li>
+    </ul>
+  </section>
+
+  <!-- ============ 학력, 기타 ============ -->
+  <section class="section" aria-labelledby="h-edu">
+    <div class="label"><h2 id="h-edu">학력, 기타</h2><div class="en">Education Etc.</div></div>
+    <div>
+      <dl class="kv">
+        <dt>학력</dt><dd>안동대학교 컴퓨터공학과 졸업 (2007.03 ~ 2013.02, 3.43/4.5)</dd>
+        <dt>자격증</dt><dd>정보처리기사 (2014.08, 한국산업인력공단)</dd>
+        <dt>교육</dt><dd>스프링 MVC 2편 (2022, 인프런), 파이썬 코딩클래스 (2025, 메가존아이티 평생교육원)</dd>
+        <dt>수상</dt><dd>수유 전통시장 활성화 앱 공모전 전통시장활성화상 (2011, 안드로이드 앱)</dd>
+        <dt>대외활동</dt><dd>한이음 IT 인턴십, (주)아이앤티시스템 (2012.07 ~ 2012.09)</dd>
+        <dt>병역</dt><dd>육군 병장 만기제대 (2008.08 ~ 2010.06)</dd>
+      </dl>
+
+      <div class="closing">
+        <p>흔들리지 않는 서비스를<br><strong>함께 만들겠습니다.</strong></p>
+        <div class="links">
+          <a href="https://github.com/jinikjang88" target="_blank" rel="noopener noreferrer">github.com/jinikjang88</a>
+          | <a href="https://stellar.me.kr/">stellar.me.kr</a>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- ----- 어다인 cards ----- -->
-    <div class="pad-x" style="padding: 30px 64px 56px;">
-      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
-        <div style="font-size: 15px; font-weight: 800; color: #3a5a4a;">어다인(주)</div>
-        <div style="flex: 1; height: 1px; background: #e3ebe6;"></div>
-        <div style="font-size: 12px; color: #8a9a92;">2012.12 - 2019.09 · 금융권 통합메시징 (M1 프레임워크)</div>
-      </div>
-
-      <!-- card: KB차세대 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 14px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">KB국민카드 차세대 프로젝트</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2018.10 - 2019.09</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 KB국민카드</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">분석</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">설계</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">개발</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #7a5a36; background: #f3ead6; padding: 2px 8px; border-radius: 100px;">PL</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">차세대 시스템 전환에 참여하여 SMS 메시징 시스템의 마이그레이션 및 안정화를 수행했습니다.</div>
-        <div style="display: flex; align-items: center; gap: 9px; margin-top: 12px; padding: 9px 13px; background: #fbf6ec; border: 1px solid #f0e6d2; border-radius: 4px;">
-          <span style="font-size: 14px;">★</span>
-          <span style="font-size: 12px; color: #7a6a4a; line-height: 1.4;"><span style="font-weight: 700; color: #5e5236;">우수 SI업체 인원 선정, 포상</span> - 500여 개 전 업무 발송 테스트 및 DB 마이그레이션 완료</span>
-        </div>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Linux (Intel)</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">Oracle</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 8</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">TCP/IP, FTP</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">Apache FreeMarker</span>
-        </div>
-      </div>
-
-      <!-- card: 씨티은행 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 14px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">씨티은행 통합메시징 OS전환</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2018.01 - 2018.03</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 씨티은행</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">분석</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">설계</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">지원</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #7a5a36; background: #f3ead6; padding: 2px 8px; border-radius: 100px;">PL</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">통합메시징 시스템 OS전환의 분석, 설계, 개발과 메시징 업무 협의, 테스트 및 이행 지원을 담당했습니다.</div>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Unix-AIX, Linux</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">Oracle</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 1.6</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">TCP/IP, FTP</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">Apache FreeMarker</span>
-        </div>
-      </div>
-
-      <!-- card: KB통합메시징 구축 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 14px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">KB국민카드 통합메시징 구축</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2016.12 - 2017.03</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 KB국민카드</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">분석</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">설계</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">개발</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">통합메시징 시스템의 PUSH, KAKAO, LINE 연동 개발을 지원했습니다.</div>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Unix</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">Oracle</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 1.6</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">TCP/IP, FTP</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">Apache FreeMarker</span>
-        </div>
-      </div>
-
-      <!-- card: 현대해상 DB암호화 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 14px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">현대해상 통합메시징 DB암호화</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2016.10 - 2017.10</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 현대해상</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">분석</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">설계</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">개발</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">DB암호화 대응 솔루션과 웹 프로그램을 개발하고, 업무 협의 및 지원을 수행했습니다.</div>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Linux (Intel)</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">Tibero</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 1.7</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">TCP/IP, FTP</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">Spring Boot, MyBatis, Apache FreeMarker</span>
-        </div>
-      </div>
-
-      <!-- card: KEB하나 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 14px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">KEB하나은행 텍스트뱅킹 MO서비스</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2016.09 - 2016.12</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 KEB하나은행</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">지원</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">텍스트뱅킹 MO서비스 구축을 지원했습니다.</div>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Unix-AIX</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">Oracle</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 1.6</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">TCP/IP, FTP</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">Apache FreeMarker</span>
-        </div>
-      </div>
-
-      <!-- card: 현대해상 알림톡 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 14px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">현대해상 통합메시징 알림톡 연동</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2016.04 - 2016.09</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 현대해상</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">분석</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">설계</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">개발</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">LG CNS 알림톡 모듈 연동을 지원하고, 통합메시징 웹 화면을 개발했습니다.</div>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Linux (Intel)</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">Tibero</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 1.7</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">TCP/IP, FTP</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">Apache FreeMarker</span>
-        </div>
-      </div>
-
-      <!-- card: YK대부/산와 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 14px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">YK대부, 산와머니 통합메시징, 웹 구축</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2015.10 - 2016.02</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 YK대부, 산와머니</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">분석</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">설계</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">개발</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">통합메시징 시스템 구축 및 웹 프로그램 개발, 테스트 이행을 담당했습니다.</div>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Windows 2008 R2</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">MSSQL</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 1.7</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">RESTful API</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">Spring Boot, Apache FreeMarker</span>
-        </div>
-      </div>
-
-      <!-- card: 삼성화재 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 14px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">삼성화재 통합메시징 시스템 구축</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2015.06 - 2015.09</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 삼성화재</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">분석</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">설계</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">개발</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">통합메시징 시스템 구축 및 개발, 수정과 메시징 업무 협의, 테스트 및 이행 지원을 담당했습니다.</div>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Unix-AIX, HP-UX</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">Oracle</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 1.6</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">TCP/IP, FTP</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">Apache FreeMarker</span>
-        </div>
-      </div>
-
-      <!-- card: 대구은행 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 14px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">대구은행 SMS메시징 발송사 구축</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2014.06 - 2014.08</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 대구은행</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">분석</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">설계</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">지원</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">LGU+ 발송사 에이전트 분배 기능을 추가하고, 분배별 통계를 지원했습니다.</div>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Unix-AIX</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">Oracle</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 1.6</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">TCP/IP, FTP</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">Apache FreeMarker</span>
-        </div>
-      </div>
-
-      <!-- card: KB DB암호화 2013 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 14px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">KB국민카드 통합메시징 DB암호화</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2013.12</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 KB국민카드</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">개발</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">메시징 개인정보(주민등록번호, 휴대폰번호, 고객명, 계좌번호 등) API 연동 개발을 담당했습니다.</div>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Unix-AIX</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">Oracle</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 1.6</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">TCP/IP, FTP</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">Apache FreeMarker</span>
-        </div>
-      </div>
-
-      <!-- card: KB통합어드민 웹 -->
-      <div style="border-left: 3px solid #3a5a4a; background: #fafcfb; border-radius: 0 6px 6px 0; padding: 18px 22px; break-inside: avoid;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-          <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">KB국민카드 통합어드민 웹 구축</div>
-          <div style="font-size: 11.5px; color: #8a9a92; white-space: nowrap;">2013.01 - 2013.04</div>
-        </div>
-        <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; align-items: center;">
-          <span style="font-size: 11px; color: #6b7c74;">고객사 KB국민카드</span><span style="color: #cdd9d2;">·</span>
-          <span style="font-size: 10.5px; font-weight: 700; color: #2c4339; background: #e8efe9; padding: 2px 8px; border-radius: 100px;">개발</span>
-        </div>
-        <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 11px;">KB국민카드 전용 웹 프레임워크(스파이더)로 웹 프로그램을 개발했습니다.</div>
-        <div style="display: grid; grid-template-columns: 56px 1fr 56px 1fr; gap: 7px 14px; margin-top: 14px; padding-top: 13px; border-top: 1px solid #eef2f0;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">OS</span><span style="font-size: 11.5px; color: #4b5650;">Unix-AIX</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">DBMS</span><span style="font-size: 11.5px; color: #4b5650;">Oracle</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">언어</span><span style="font-size: 11.5px; color: #4b5650;">Java 1.6, JavaScript</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">통신</span><span style="font-size: 11.5px; color: #4b5650;">TCP/IP, FTP, RESTful API</span>
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #9aa8a1;">F/W</span><span style="font-size: 11.5px; color: #4b5650; grid-column: span 3;">스파이더(Spider) 프레임워크, Apache FreeMarker</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ============ PORTFOLIO ============ -->
-    <div class="pad-x" style="padding: 8px 64px 64px;">
-      <div style="font-size: 22px; font-weight: 800; color: #1f2d27; letter-spacing: -0.3px;">포트폴리오 <span style="font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #6b9080;">Portfolio</span></div>
-      <div style="font-size: 13px; color: #6b7c74; margin-top: 8px; margin-bottom: 22px;">개인적으로 운영, 개발하고 있는 사이드 프로젝트입니다.</div>
-
-      <div class="portfolio-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-        <a href="https://github.com/jinikjang88" target="_blank" rel="noopener noreferrer" style="display: block; border: 1px solid #e3ebe6; border-radius: 8px; padding: 20px 22px; background: #fafcfb;">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 10px;">
-            <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">GitHub</div>
-            <span style="font-size: 13px; color: #6b9080;">↗</span>
-          </div>
-          <div style="font-size: 12px; color: #3a5a4a; font-weight: 600; margin-top: 4px;">github.com/jinikjang88</div>
-          <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 9px;">소스 코드 저장소 및 사이드 프로젝트 이력입니다.</div>
-        </a>
-
-        <a href="https://devsmith.kr" target="_blank" rel="noopener noreferrer" style="display: block; border: 1px solid #e3ebe6; border-radius: 8px; padding: 20px 22px; background: #fafcfb;">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 10px;">
-            <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">DevSmith</div>
-            <span style="font-size: 13px; color: #6b9080;">↗</span>
-          </div>
-          <div style="font-size: 12px; color: #3a5a4a; font-weight: 600; margin-top: 4px;">devsmith.kr</div>
-          <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 9px;">전자책 도서 관련 서비스입니다.</div>
-        </a>
-
-        <a href="https://wolkanglegend.com" target="_blank" rel="noopener noreferrer" style="display: block; border: 1px solid #e3ebe6; border-radius: 8px; padding: 20px 22px; background: #fafcfb;">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 10px;">
-            <div style="font-size: 15px; font-weight: 700; color: #1f2d27;">Wolkang Legend</div>
-            <span style="font-size: 13px; color: #6b9080;">↗</span>
-          </div>
-          <div style="font-size: 12px; color: #3a5a4a; font-weight: 600; margin-top: 4px;">wolkanglegend.com</div>
-          <div style="font-size: 12.5px; line-height: 1.6; color: #4b5650; margin-top: 9px;">게임 개발 관련 프로젝트입니다.</div>
-        </a>
-      </div>
-    </div>
-
-  </div>
-</div>
+  <footer class="foot">장진익 | 이력서</footer>
+</main>
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "장진익",
-  "alternateName": "Jang Jin-ik",
-  "jobTitle": "백엔드 개발자",
-  "description": "12년 경력 백엔드 개발자. Java, Spring Boot, JPA 기반 웹 백엔드와 금융권 통합메시징 구축·운영.",
+  "alternateName": "Jinik Jang",
+  "jobTitle": "백엔드 엔지니어",
+  "description": "약속한 데이터를 제때, 정확하게, 멈추지 않고 전달하는 백엔드 엔지니어. 우아한형제들·코웨이 백오피스 백엔드, 20여 개 금융사 통합메시징 구축·운영.",
   "url": "https://stellar.me.kr/",
   "sameAs": [
     "https://github.com/jinikjang88",
+    "https://hanhoek.com",
     "https://devsmith.kr",
     "https://wolkanglegend.com"
   ],
-  "knowsAbout": ["Java", "Spring Boot", "JPA", "QueryDSL", "MySQL", "RESTful API", "금융 통합메시징"],
+  "knowsAbout": ["Java", "Spring Boot", "Spring WebFlux", "JPA", "QueryDSL", "jOOQ", "MySQL", "Oracle", "금융 통합메시징", "비동기 메시지 파이프라인"],
   "alumniOf": {
     "@type": "CollegeOrUniversity",
     "name": "안동대학교"
   },
-  "address": {
-    "@type": "PostalAddress",
-    "addressRegion": "경기도",
-    "addressCountry": "KR"
-  },
-  "worksFor": {
-    "@type": "Organization",
-    "name": "메가존"
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "name": "정보처리기사"
   }
 }
 </script>
-</body></html>
+</body>
+</html>
